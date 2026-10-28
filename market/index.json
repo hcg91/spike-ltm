@@ -36,16 +36,21 @@
       },
       "metadata": {
         "category": "memory",
-        "keywords": ["memory", "sqlite", "local", "harness"]
+        "keywords": [
+          "memory",
+          "sqlite",
+          "local",
+          "harness"
+        ]
       },
       "versions": [
         {
-          "version": "0.2.0-rc.2",
-          "publishTimestamp": 1793174400,
+          "version": "0.2.0-rc.3",
+          "publishTimestamp": 1793192781,
           "source": {
             "type": "git",
             "url": "https://github.com/hcg91/spike-ltm.git",
-            "commit": "41dd23f56ef4d8e0564ffd4050034ef01ff7b454"
+            "commit": "5adff7c0bdf46dc724874e1669499bdcc34103a4"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.3"
