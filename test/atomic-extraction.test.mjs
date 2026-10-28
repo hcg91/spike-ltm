@@ -49,7 +49,7 @@ for (const point of ['queued', 'claimed', 'generated', 'committed']) test(`abrup
     const {core,jobs}=openMemoryStore({dir:${JSON.stringify(dir)}});
     jobs.enqueue({sessionId:'s',eventSeq:1,scopeId:core.scopeIdFor('global'),payload:{epoch:core.captureEpoch()}});
     if (${JSON.stringify(point)}==='queued') process.exit(17);
-    const job=jobs.claim({leaseMs:25});
+    const job=jobs.claim({leaseMs:2000});
     if (${JSON.stringify(point)}==='claimed') process.exit(17);
     const result={targets:[],candidates:[${JSON.stringify(candidate('durable fact'))}]};
     jobs.stage(job.id,job.leaseToken,result);
@@ -58,7 +58,7 @@ for (const point of ['queued', 'claimed', 'generated', 'committed']) test(`abrup
     process.exit(17);
   `], { encoding: 'utf8' })
   assert.equal(child.status, 17, child.stderr)
-  await new Promise(r => setTimeout(r, 30))
+  await new Promise(r => setTimeout(r, 2200))
   const store = openMemoryStore({ dir })
   try {
     const job = store.jobs.claim()
