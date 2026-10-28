@@ -1,0 +1,57 @@
+{
+  "format": 1,
+  "title": {
+    "en": "spike-ltm memory index",
+    "zh": "spike-ltm 长期记忆索引"
+  },
+  "description": {
+    "en": "Single-plugin index for spike-ltm, a local long-term memory plugin for DeepSeek Harness.",
+    "zh": "spike-ltm 的单插件索引：DeepSeek Harness 的本地长期记忆插件。"
+  },
+  "metadata": {
+    "categories": {
+      "memory": {
+        "title": {
+          "en": "Memory",
+          "zh": "记忆"
+        }
+      }
+    }
+  },
+  "plugins": [
+    {
+      "name": "spike-ltm",
+      "title": {
+        "en": "spike-ltm",
+        "zh": "spike-ltm 长期记忆"
+      },
+      "description": {
+        "en": "Local long-term memory for DeepSeek Harness: SQLite storage, automatic extraction, semantic recall, corrections, reliable forgetting, and a summary dialog.",
+        "zh": "DeepSeek Harness 的本地长期记忆：SQLite 存储、自动提炼、语义召回、纠正、可靠遗忘和记忆摘要弹窗。"
+      },
+      "author": "hcg91",
+      "homepage": "https://github.com/hcg91/spike-ltm",
+      "repository": {
+        "url": "https://github.com/hcg91/spike-ltm"
+      },
+      "metadata": {
+        "category": "memory",
+        "keywords": ["memory", "sqlite", "local", "harness"]
+      },
+      "versions": [
+        {
+          "version": "0.2.0-rc.2",
+          "publishTimestamp": 1793174400,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/hcg91/spike-ltm.git",
+            "commit": "41dd23f56ef4d8e0564ffd4050034ef01ff7b454"
+          },
+          "engines": {
+            "dsh": ">=0.2.1-rc.3"
+          }
+        }
+      ]
+    }
+  ]
+}
