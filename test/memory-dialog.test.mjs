@@ -55,7 +55,7 @@ function nodes(tree, predicate) {
   if (!tree || typeof tree !== 'object') return []
   return [...(predicate(tree) ? [tree] : []), ...nodes(tree.children, predicate), ...nodes(tree.props?.anchor, predicate)]
 }
-async function setup(t, intercept, nativeFactory) {
+async function setup(t, intercept, nativeFactory, guarded = false) {
   const dir = mkdtempSync(join(tmpdir(), 'ltm-dialog-'))
   const core = createCore({ dir }), routes = [], requests = [], prompts = []
   const a = core.save('合成 A').item, b = core.save('合成 B').item
@@ -99,8 +99,12 @@ async function setup(t, intercept, nativeFactory) {
     items: [{ id: 'settings', label: '设置' }, { id: 'contact', label: '意见反馈' }, { id: 'signout', label: '退出登录' }],
     onClose() {}, onSelect: id => { nativeActions[id]++ },
   })
-  plugin.apply({ slots: { entriesOfSlot: () => [{ component: native, options: { priority: 0 }, locale: 'settings.account', inject: () => nativeProps }],
-    inject: (_, fn) => fn(), register: (config, render) => { slotRender = props => React.createElement(render, { ...props, ...config.inject?.() }); return () => {} } }, effect() {} })
+  const clientContext = { get() {}, slots: { entriesOfSlot: () => [{ component: native, options: { priority: 0 }, locale: 'settings.account', inject: () => nativeProps }],
+    inject: (_, fn) => fn(), register: (config, render) => { slotRender = props => React.createElement(render, { ...props, ...config.inject?.() }); return () => {} } }, effect() {} }
+  plugin.apply(guarded ? new Proxy(clientContext, { get(target, key) {
+    if (key === 'uiSession') throw new Error('service "uiSession" is not declared by your plugin')
+    return target[key]
+  } }) : clientContext)
   function renderer(component, props) {
     const r = { hooks: [], effects: [], pending: [], cursor: 0, tree: null }
     r.render = () => { active = r; r.cursor = 0; r.tree = component(props); for (const n of nodes(r.tree, n => n.type === 'dialog')) n.props.ref.current ??= { showModal() {}, close() {} }; r.pending.splice(0).forEach(fn => fn()); return r.tree }
@@ -127,6 +131,12 @@ async function setup(t, intercept, nativeFactory) {
   t.after(() => { ui.unmount(); launcher.unmount(); dispose(); rmSync(dir, { recursive: true, force: true }) })
   return { ui, launcher, nativeActions, core, a, b, requests, prompts, dir }
 }
+
+test('头像菜单遵守动态插件服务访问限制，无会话时仍可打开记忆', async t => {
+  const { ui } = await setup(t, undefined, undefined, true)
+  assert.equal(ui.state().view.sections.length, 2)
+  assert.equal(ui.state().error, null)
+})
 
 test('实际宿主头像菜单：插入长期记忆后原设置、反馈、退出处理与账号状态仍保留', { skip: !process.env.DSH_HOST_ASAR }, async t => {
   const archive = readFileSync(process.env.DSH_HOST_ASAR)

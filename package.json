@@ -1,6 +1,6 @@
 {
   "name": "spike-ltm",
-  "version": "0.2.0-rc.2",
+  "version": "0.2.0-rc.3",
   "private": false,
   "description": "长期记忆插件：工具、画像、语义召回、可靠遗忘、内置记忆页面",
   "type": "module",
