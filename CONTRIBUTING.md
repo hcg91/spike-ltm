@@ -1,6 +1,6 @@
 # 贡献
 
-使用 Node.js 24。运行 `npm ci`、`npm run test:all`；修改召回时另跑 `npm run test:semantic`。测试必须使用临时目录和合成资料，不能读取开发者真实记忆作为夹具。
+使用 Node.js 24。运行 `npm ci`、`npm run test:all`；修改召回时另跑 `npm run test:semantic`。
 
 修改写入或异步任务时先补失败用例，再修改代码。覆盖取消/超时、版本冲突、跨项目、遗忘和崩溃恢复。界面保持连续摘要和单段/整体对话，不给普通自动更新添加确认弹窗。
 
