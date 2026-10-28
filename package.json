@@ -1,0 +1,63 @@
+{
+  "name": "spike-ltm",
+  "version": "0.2.0-rc.2",
+  "private": false,
+  "description": "长期记忆插件：工具、画像、语义召回、可靠遗忘、内置记忆页面",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "scripts",
+    "test/*.test.mjs",
+    "test/*.integration.mjs",
+    "test/semantic-reliability.mjs",
+    "eval",
+    "docs",
+    "cordis.patch.yml",
+    "LICENSE",
+    "README.md",
+    "SECURITY.md",
+    "CONTRIBUTING.md",
+    "CHANGELOG.md",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "dependencies": {
+    "@huggingface/transformers": "4.3.1"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings-account"
+      ]
+    }
+  },
+  "scripts": {
+    "test": "node test/spike.test.mjs && node --test test/client-boot.test.mjs test/memory-maintenance.test.mjs test/auto-reliability.test.mjs",
+    "test:semantic": "node test/semantic.integration.mjs && node --test test/auto-recall.integration.mjs test/relevance.integration.mjs",
+    "test:ui": "node test/memory-ui.test.mjs && node --test test/live-memory.test.mjs test/memory-model.test.mjs test/memory-dialog.test.mjs test/summary-memory.test.mjs",
+    "test:all": "node scripts/test-all.mjs",
+    "test:storage": "node --test test/sqlite-core.test.mjs test/jobs-recovery.test.mjs test/schema-upgrade.test.mjs test/migration-release.test.mjs test/atomic-extraction.test.mjs test/project-integration.test.mjs test/durable-auto.test.mjs test/review-regressions.test.mjs",
+    "migrate": "node scripts/migrate.mjs"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=24.0.0 <25"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hcg91/spike-ltm.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hcg91/spike-ltm/issues"
+  },
+  "homepage": "https://github.com/hcg91/spike-ltm#readme"
+}

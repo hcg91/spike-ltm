@@ -1,0 +1,20 @@
+[
+  {
+    "file": "test/memory-ui.test.mjs",
+    "commentsEdited": 5,
+    "charactersRemoved": 137,
+    "astUnchanged": true
+  },
+  {
+    "file": "test/p1-store.test.mjs",
+    "commentsEdited": 10,
+    "charactersRemoved": 337,
+    "astUnchanged": true
+  },
+  {
+    "file": "test/spike.test.mjs",
+    "commentsEdited": 13,
+    "charactersRemoved": 927,
+    "astUnchanged": true
+  }
+]

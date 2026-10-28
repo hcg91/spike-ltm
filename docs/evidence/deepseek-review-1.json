@@ -1,0 +1,35 @@
+{
+  "startedAt": "2026-10-26T11:40:38.876Z",
+  "provider": "deepseek-account",
+  "model": "deepseek-flash",
+  "reasoningEffort": "off",
+  "sources": [
+    {
+      "path": "lib/recall-filter.js",
+      "hash": "49d7ae9fc3e1df1a54afc34ef9ab052710b8b6a76850eb7c0129dd5c144be956"
+    },
+    {
+      "path": "lib/forget-topic.js",
+      "hash": "3d1fab46c698b77ca218e9b470f42af3286ad2417ceebb17d6dd6969743cbd4e"
+    },
+    {
+      "path": "lib/index.js",
+      "hash": "712bc113a048da8d3a12fc8867e69edd5a7b190ab49af9198bb45a497d94f489"
+    },
+    {
+      "path": "lib/core.js",
+      "hash": "06210fafcf6ec058256cf31b79893c0283e27460cd1695c77e8ecd30aafccec8"
+    },
+    {
+      "path": "lib/store/core.js",
+      "hash": "cf91b590b958bac77edf18e202148e75a74670c2ebe8b82956c4b144b1206f04"
+    },
+    {
+      "path": "test/forget-topic.test.mjs",
+      "hash": "690211b5685075da21bcfa3acd6d4f4011e98fb07b6aece1708c0a8a17607bdf"
+    }
+  ],
+  "text": "{\"findings\":[{\"severity\":\"high\",\"file\":\"lib/forget-topic.js\",\"line\":6,\"issue\":\"当 LLM 或路由不可用时，程序退回到 core.forget(query) 做字面包含匹配；这条降级路径只会删除“文本中包含主题字符串”的条目（lib/store/core.js 228 行的 it.text.includes(needle) / lib/core.js 209 行），而带缓存回复（llm/route 可用）时走的是模型按含义选 ID。于是，同一条“狗”主题，模型选 ID 的路径会删掉“柯基”，但模型不可用/路由缺失时只按字面匹配，导致同义条目漏删——正是样本里“同义遗忘漏删”的根因，且降级路径不报错、返回 ok:true。\",\"trigger\":\"调用 forgetTopic 时 llm?.stream 或 route?.provider/model 缺失（例如会话无 requestHeader、llm 服务未注入、语义关闭），且主题与目标条目是语义同义而非字面包含（topic='狗'、条目='用户养了一只柯基'）。\",\"test\":\"createCore 后 save('用户养了一只柯基')，调用 forgetTopic(core,'狗',{llm:undefined})，断言 result.removed.length===1；当前实现会 removed.length===0 且 ok:true。\"},{\"severity\":\"high\",\"file\":\"lib/index.js\",\"line\":510,\"issue\":\"ltm_forget 工具直接使用 ctx.llm 而非经 ctx.get('llm') 解析（pre-step 里 324-325 行对同一路径做了 llm ??= ctx.get?.('llm') 兜底），导致工具执行时 ctx.llm 常为 undefined；于是 forgetTopic 第 6 行降级到字面匹配，按含义选 ID 的新代码在生产接线里永远不生效，同义遗忘漏删回归依旧。同时 route 取自 exec.agent.session.requestHeader，若该处返回的 config 与 tool 期望结构不一致也会静默降级。\",\"trigger\":\"宿主只在 ctx.get('llm') 上暴露 llm 服务（index.js 注释里明确把它当作可选模型服务、并在 pre-step 用 ctx.get 兜底），而 ltm_forget 执行时 ctx.llm 为 undefined；或 exec.agent.session.requestHeader 不可用。此时 ltm_forget 走字面匹配而不是模型选 ID。\",\"test\":\"构造 ctx：llm 只在 ctx.get('llm') 返回、ctx.llm 为 undefined；保存 '用户养了一只柯基'；执行 tools.get('ltm_forget').execute({topic:'狗'},exec)（exec 带 requestHeader）；断言 removed===1 且 request.purpose==='spike-ltm-forget'。当前实现会 removed===0、llm.stream 未被调用。\"},{\"severity\":\"medium\",\"file\":\"lib/forget-topic.js\",\"line\":13,\"issue\":\"每批 filterRecall 用 remaining=deadline-Date.now() 作为该批超时，但总循环没有在每批之前复核“删除前剩余时间”是否够用；且 recall-filter.js 31 行 Promise.race 在超时后 timer 只 abort 并 reject，而 run() 里的 llm.stream 没有在此路径被真正取消（forget-topic 无 signal 传递到外层 deadline）。更关键：while 循环结束与第 16 行 core.forget(...expectedRevision) 之间没有再做 revision 复核之外的互斥——VERSION_CONFLICT 虽能防旧快照写入，但在并发遗忘/保存已经发生且 revision 恰好被别的“空匹配也 bumpEpoch”的遗忘重置时（store/core.js 231 行即使空匹配也 bumpEpoch 但 revision 在 232 行才 bump，仍会变更），forgetTopic 会以 VERSION_CONFLICT 失败并丢弃已成功的模型选择，表现为“删不掉但也不报具体哪些条目”。\",\"trigger\":\"candidates.length > 20 时进行多批 filterRecall；批间有并发 forget/forgetItem（同样改 revision/epoch）或在某批接近 deadline 时慢返回，forgetTopic 的 expectedRevision 校验失败，整次删除回滚为 VERSION_CONFLICT，用户看到遗忘失败而非部分成功。\",\"test\":\"构造 21 条候选：第一批模型返回 [id0] 且耗时接近 timeoutMs 的一半，期间并发执行 core.save('并发') 使 revision 变化；再执行 forgetTopic，断言当前实现抛 VERSION_CONFLICT 且 id0 未被删除；期望行为是报明确冲突或重试而不是静默丢弃已选 ID。\"}],\"limits\":\"仅做了静态阅读，未运行任何测试或构建；未核验宿主 ctx.get('llm')/ctx.llm 的实际注入契约、requestHeader()?.config 的真实结构与 tool timeoutMs 是否覆盖 forgetTopic 的内部 deadline；未检查 store/service.js、db.js、extraction.js 中 enqueue/saveIfEpoch 的实际串行化实现，故 findings 中涉及的并发时序为按源码接口推断。\"}",
+  "finish": "stop",
+  "endedAt": "2026-10-26T11:40:47.836Z"
+}

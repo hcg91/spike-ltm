@@ -1,0 +1,10 @@
+node_modules/
+*.tgz
+*.db
+*.db-*
+memory.json*
+.env*
+*.log
+.dsh/
+coverage/
+test/p1-migrate-real-copy.mjs

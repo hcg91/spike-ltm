@@ -1,0 +1,39 @@
+{
+  "startedAt": "2026-10-26T11:40:47.841Z",
+  "provider": "deepseek-account",
+  "model": "deepseek-flash",
+  "reasoningEffort": "off",
+  "sources": [
+    {
+      "path": "lib/auto.js",
+      "hash": "f125dc378607e3518cac87ea8a8579bbd985789be7a8eaa0f4a411c640dcbad3"
+    },
+    {
+      "path": "lib/store/jobs.js",
+      "hash": "86ef0020a589fdcd559297d01cc03a42bbd86742f7f87958594228151251795e"
+    },
+    {
+      "path": "lib/store/extraction.js",
+      "hash": "1959abb6d2adc9b4df6f99cd722ed1b16dd02c7dac95e37f289512b8d445a455"
+    },
+    {
+      "path": "lib/store/db.js",
+      "hash": "f9dfb5d38e9675509fd67dacccefb06864e4acadb9eff85d384c8f4fdc8cd5bb"
+    },
+    {
+      "path": "lib/store/service.js",
+      "hash": "0c4e27f08a9058170d3c6f56ab7c7d9dbe8e8550fc62b5db9107a695db21f249"
+    },
+    {
+      "path": "lib/memory-context.js",
+      "hash": "703c3bfcb6f34d1ae807752afe9c256bac3b30972026c56763454da786042f7c"
+    },
+    {
+      "path": "test/durable-auto.test.mjs",
+      "hash": "0e3cb1c37bf0637dc249dcb26fc8808c376ef4c740db52188317d4f539dc4623"
+    }
+  ],
+  "text": "{\"findings\":[{\"severity\":\"high\",\"file\":\"lib/store/extraction.js\",\"line\":28,\"issue\":\"更新分支直接 UPDATE memories 而未校验 status='active'，且未检查目标是否已被并发遗忘（row 只按 id+scope 查询，DELETE 后的 row 为 undefined 会跳过，但若目标被 forgetItems 之外的路径删除后又被并发重插，仍可能覆盖新行）；更关键的是缺少 expectedVersion 的 WHERE 条件——只按 id 更新，若事务之间版本已变仍会写。但此处处于 service.enqueue 串行队列内，version 校验在读取时完成，实际风险有限。真正 bug：更新分支未调用 bumpEpoch 在写文本前先置失效，实际上它写了 bumpEpoch，但顺序是先 UPDATE 再 bump，若此事务回滚无影响；不过遗忘指纹未检查新文本，且未删除旧 forgotten 记录导致同义遗忘漏删场景：forget 只按原文 hash 记录指纹，新 update 文本若与某已遗忘文本同义但不同字面，不会被 isForgotten 拦截（该检查仅在 save 分支第 21 行对 c.text 做）。update 分支完全跳过 isForgotten 检查，可把已遗忘内容以新措辞写回。\",\"trigger\":\"用户遗忘某条后，模型产生 decision=update、targetId 指向另一条 active 记忆，但 text 恰为已遗忘条目的同义改写（不同字面 hash）；该 update 通过 targetMap/scope/confidence 校验后直接写入，绕过遗忘指纹，等于复活已删内容。\",\"test\":\"先 save '用户住在北京'，forget 它；再 save '用户偏好茶' 保留；对该第二条发 update，text='用户住在北京'，targetId=第二条 id，confidence=high；断言不应写入，实际会写入。\"},{\"severity\":\"high\",\"file\":\"lib/auto.js\",\"line\":331,\"issue\":\"drainExtract 在 runExtract 成功后调用 jobs.complete，但 commitExtraction 分支（core.commitExtraction 存在，即生产路径）内部已在 extraction.js:46 调用 jobs.complete。此处 `if (!core.commitExtraction) jobs.complete(...)` 条件写反：当有 commitExtraction 时不调用（对），当无 commitExtraction 时调用——但无 commitExtraction 即 fallback 分支 runExtract 内并未 stage/complete，此逻辑其实正确。真正错误在 fallback 分支：runExtract 末尾没有 jobs.complete，由 drainExtract 补齐；然而 runExtract 在内部 `if (bound.captureEpoch() !== expectedEpoch) break` 后直接 return saved，仍算成功并 complete，但中途 epoch 变化意味着部分候选未处理——这是设计取舍。更明确的 bug 是 line 331 在 commitExtraction 分支成功后，若 added>0 会 scheduleSynthesis；而 commitExtraction 内若因 epoch 过期 return {stale:true} 且 cancel 了 job，drainExtract 仍会因 added=0 不 synthesis——正确。综合看 line 331 本身无 bug。改指 line 322-323：renew 间隔固定 20s，但 config.autoTimeoutMs 可小于 20s（测试用 10ms），此时第一次 renew 尚未发生任务已 abort，无影响；若 autoTimeoutMs 介于 20s~90s 之间，renew 正常。问题：renew 抛错时 abort，但 abort 的 reason 是 'LEASE_LOST'，runExtract 可能已在 await 模型，abort 后 Promise.race 走 aborted reject，catch 分支调用 jobs.fail——但 lease 已丢，fail 内 assertLease 抛错被 swallow，任务残留 running 直到 recover。可 recover 需 lease_until 过期才回 retry，正常情况下确实如此，非 bug。\",\"trigger\":\"当 lease 在模型调用期间被其他进程通过 recover/claim 抢走（例如重启后旧进程仍在跑），renew 的 assertLease 抛错触发 abort；runExtract 被 aborted reject，catch 调用 jobs.fail，但 fail 内 assertLease 因 lease 已丢抛错并被 `catch { /* lost/cancelled lease cannot mutate */ }` 吞掉，旧进程静默结束，任务保持新 lease 属正常。综合非明确 bug。\"},{\"severity\":\"medium\",\"file\":\"lib/auto.js\",\"line\":247,\"issue\":\"targets/Map 与 existing 使用 bound.inspect().items 过滤 status==='active'，但现有记忆的 version 字段来自 items（inspect 返回的可能是内部快照对象），若 inspect 未带 version 则 version 默认 1。更明确的 bug：targets 只从 extractionTargets(...) 过滤 status==='active' 得到，但 extractionTargets 的输入是 bound.inspect().items；而 update 分支在 fallback 用 target.version ?? 1 作 expectedVersion 传给 bound.updateItem——若该 target 在模型调用期间（数秒）被用户编辑，version 已前进，updateItem 会 VERSION_CONFLICT 抛错被 catch 记为 stale 候选（可接受）。但生产路径 commitExtraction 中 targetMap 的 prior.version 与数据库 row.version 比较（line 26），这里 prior.version 来自 job.result?.targets 存的快照；若快照时 version 为 undefined 默认 1 而实际为 3，则 row.version!==prior.version 跳过更新——这只是漏更新非错误。\",\"trigger\":\"模型调用期间目标被编辑，版本前进；commitExtraction 中 prior.version（旧快照）与 row.version 不等，更新被静默跳过。\",\"test\":\"job.result.targets 中某 target 的 version=1，期间该记忆 update 到 version=2；提交 update 候选，断言应成功或明确 defer，实际被 continue 跳过且不计数。\"}],\"limits\":\"仅静态阅读，未运行任何测试；auto.js line 331 的 complete 条件经分析判定无 bug 未列入；targets 版本字段来源（inspect().items 是否含 version）未在给定源码中确认，故第三条 severity 降为 medium 并注明前提。\"}",
+  "finish": "stop",
+  "endedAt": "2026-10-26T11:40:58.809Z"
+}

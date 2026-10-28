@@ -1,0 +1,208 @@
+{
+  "version": "0.2.0-rc.2",
+  "runs": [
+    {
+      "name": "verified-development-1",
+      "passed": 51,
+      "total": 51,
+      "expectedTotal": 51,
+      "errors": 0,
+      "unanswered": 0,
+      "calls": 120,
+      "recallMedianMs": 732,
+      "recallP95Ms": 1070,
+      "groups": {
+        "correction": {
+          "passed": 10,
+          "total": 10
+        },
+        "abstention": {
+          "passed": 12,
+          "total": 12
+        },
+        "projectIsolation": {
+          "passed": 6,
+          "total": 6
+        },
+        "afterForget": {
+          "passed": 4,
+          "total": 4
+        }
+      },
+      "failures": [],
+      "sourceHashesMatch": true
+    },
+    {
+      "name": "verified-heldout-2",
+      "passed": 51,
+      "total": 51,
+      "expectedTotal": 51,
+      "errors": 0,
+      "unanswered": 0,
+      "calls": 120,
+      "recallMedianMs": 799,
+      "recallP95Ms": 1154,
+      "groups": {
+        "correction": {
+          "passed": 10,
+          "total": 10
+        },
+        "abstention": {
+          "passed": 12,
+          "total": 12
+        },
+        "projectIsolation": {
+          "passed": 6,
+          "total": 6
+        },
+        "afterForget": {
+          "passed": 4,
+          "total": 4
+        }
+      },
+      "failures": [],
+      "sourceHashesMatch": true
+    },
+    {
+      "name": "verified-heldout-3",
+      "passed": 51,
+      "total": 51,
+      "expectedTotal": 51,
+      "errors": 0,
+      "unanswered": 0,
+      "calls": 120,
+      "recallMedianMs": 787,
+      "recallP95Ms": 1267,
+      "groups": {
+        "correction": {
+          "passed": 10,
+          "total": 10
+        },
+        "abstention": {
+          "passed": 12,
+          "total": 12
+        },
+        "projectIsolation": {
+          "passed": 6,
+          "total": 6
+        },
+        "afterForget": {
+          "passed": 4,
+          "total": 4
+        }
+      },
+      "failures": [],
+      "sourceHashesMatch": true
+    }
+  ],
+  "history": [
+    {
+      "name": "development-baseline",
+      "passed": 49,
+      "total": 51,
+      "expectedTotal": 51,
+      "errors": 0,
+      "unanswered": 0,
+      "calls": 68
+    },
+    {
+      "name": "development-diagnosis",
+      "passed": 4,
+      "total": 10,
+      "expectedTotal": 10,
+      "errors": 0,
+      "unanswered": 0,
+      "calls": 15
+    },
+    {
+      "name": "development-fixed",
+      "passed": 50,
+      "total": 51,
+      "expectedTotal": 51,
+      "errors": 0,
+      "unanswered": 0,
+      "calls": 68
+    },
+    {
+      "name": "development-reviewed",
+      "passed": 51,
+      "total": 51,
+      "expectedTotal": 51,
+      "errors": 0,
+      "unanswered": 0,
+      "calls": 118
+    },
+    {
+      "name": "heldout-first",
+      "passed": 46,
+      "total": 47,
+      "expectedTotal": 51,
+      "errors": 1,
+      "unanswered": 4,
+      "calls": 111
+    },
+    {
+      "name": "heldout-second",
+      "passed": 50,
+      "total": 51,
+      "expectedTotal": 51,
+      "errors": 0,
+      "unanswered": 0,
+      "calls": 118
+    },
+    {
+      "name": "final-development-1",
+      "passed": 50,
+      "total": 50,
+      "expectedTotal": 51,
+      "errors": 1,
+      "unanswered": 1,
+      "calls": 120
+    },
+    {
+      "name": "final-heldout-2",
+      "passed": 51,
+      "total": 51,
+      "expectedTotal": 51,
+      "errors": 0,
+      "unanswered": 0,
+      "calls": 120
+    },
+    {
+      "name": "optimized-development",
+      "passed": 50,
+      "total": 51,
+      "expectedTotal": 51,
+      "errors": 0,
+      "unanswered": 0,
+      "calls": 120
+    },
+    {
+      "name": "final-heldout-3",
+      "passed": 51,
+      "total": 51,
+      "expectedTotal": 51,
+      "errors": 0,
+      "unanswered": 0,
+      "calls": 120
+    },
+    {
+      "name": "optimized-heldout",
+      "passed": 50,
+      "total": 51,
+      "expectedTotal": 51,
+      "errors": 0,
+      "unanswered": 0,
+      "calls": 120
+    }
+  ],
+  "manualNotes": [
+    "旧 optimized-development 的相机问题发生在遗忘之后，属于真实删除漏选，不是型号格式差异；首次口头解释错误已纠正。",
+    "原来在哪里一题时间指向不清，字符串匹配可能高估效果；原始答案保留。"
+  ],
+  "limitations": [
+    "Known regression datasets, not independent blind tests",
+    "No peer comparison",
+    "Headless account calls, not desktop interaction"
+  ]
+}

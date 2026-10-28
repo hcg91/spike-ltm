@@ -1,0 +1,17 @@
+[
+  {
+    "id": "synthetic-identity-correction-forgetting",
+    "steps": [
+      { "op": "ingest", "text": "我叫谭禾，长期定居嘉兴，职业是文物数字化工程师。我现在自己的主力相机是富士 X-T50。我偏好阴天柔光，修照片不要过度磨皮。朋友林澈住在青岛，正在准备法语考试，这是朋友的经历，与我无关。今天临时借用的索尼 A7C 不属于我。" },
+      { "op": "ask", "text": "我叫什么名字？", "expected": ["谭禾"] },
+      { "op": "ask", "text": "我长期生活在哪座城市？", "expected": ["嘉兴"], "forbidden": ["青岛"] },
+      { "op": "ask", "text": "我的职业是什么？", "expected": ["文物数字化工程师"] },
+      { "op": "ask", "text": "我的主力相机是什么型号？", "expected": ["X-T50"], "forbidden": ["A7C"] },
+      { "op": "ask", "text": "我目前在准备哪门语言考试？", "expected": ["没有记录"], "forbidden": ["法语"] },
+      { "op": "ingest", "text": "纠正一下：我原来的富士 X-T50 已经卖掉，现在我长期使用的主力相机是尼康 Zf。摄影风格仍喜欢阴天柔光，不喜欢过度磨皮。" },
+      { "op": "ask", "text": "我现在主要使用哪台相机？", "expected": ["Zf"], "forbidden": ["X-T50"] },
+      { "op": "forget", "text": "相机" },
+      { "op": "ask", "text": "我现在的相机型号是什么？", "expected": ["没有记录"], "forbidden": ["Zf", "X-T50"] }
+    ]
+  }
+]

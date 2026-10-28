@@ -1,0 +1,4 @@
+# 安装后由 Harness 加载插件。
+- insert:
+    - id: spike-ltm
+      name: spike-ltm

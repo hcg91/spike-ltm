@@ -1,0 +1,2328 @@
+{
+  "startedAt": "2026-10-26T11:51:38.805Z",
+  "cases": [
+    {
+      "id": "identity-alt",
+      "checks": [
+        {
+          "question": "你记得我的姓名吗？",
+          "answer": "记得，你的姓名是闻溪。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"0\" count=\"1\">\n- (id:29c2fab9-d9b2-4371-9b81-63b9c2b13118, fact) 用户的名字是闻溪。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 1680,
+          "ms": 2747.9530000000013
+        },
+        {
+          "question": "我平时在哪座城市生活？",
+          "answer": "芜湖。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"0\" count=\"1\">\n- (id:0e23d6c0-6933-4e76-bde1-11190655d808, fact) 用户长期在芜湖生活。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 900,
+          "ms": 2109.5334000000003
+        },
+        {
+          "question": "我的工作是什么？",
+          "answer": "你的工作是园林规划师。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"0\" count=\"1\">\n- (id:abaec9a0-3a7d-4780-ad2b-9904e31e3e4f, fact) 用户的职业是园林规划师。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 958,
+          "ms": 2111.9120999999996
+        },
+        {
+          "question": "我正在学习什么外语？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": true,
+          "recallMs": 830,
+          "ms": 2168.8484999999982
+        },
+        {
+          "question": "我最爱什么甜点？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": true,
+          "recallMs": 676,
+          "ms": 1567.9935000000005
+        }
+      ],
+      "writes": [
+        {
+          "operation": "ingest",
+          "diagnostics": {
+            "global": [
+              {
+                "id": "29c2fab9-d9b2-4371-9b81-63b9c2b13118",
+                "text": "用户的名字是闻溪。",
+                "kind": "fact",
+                "scopeId": "20e7bdb5-d1e8-4820-a79e-3fe2e6e5ee73",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 1,
+                "protected": false,
+                "reason": "姓名是长期身份信息，便于后续称呼和个性化回答。",
+                "createdAt": "2026-10-26T11:51:45.318Z",
+                "updatedAt": "2026-10-26T11:51:45.318Z"
+              },
+              {
+                "id": "0e23d6c0-6933-4e76-bde1-11190655d808",
+                "text": "用户长期在芜湖生活。",
+                "kind": "fact",
+                "scopeId": "20e7bdb5-d1e8-4820-a79e-3fe2e6e5ee73",
+                "scope": "global",
+                "source": "auto",
+                "importance": "high",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 2,
+                "protected": false,
+                "reason": "常住地会影响本地生活、出行、服务建议等回答。",
+                "createdAt": "2026-10-26T11:51:45.319Z",
+                "updatedAt": "2026-10-26T11:51:45.319Z"
+              },
+              {
+                "id": "abaec9a0-3a7d-4780-ad2b-9904e31e3e4f",
+                "text": "用户的职业是园林规划师。",
+                "kind": "fact",
+                "scopeId": "20e7bdb5-d1e8-4820-a79e-3fe2e6e5ee73",
+                "scope": "global",
+                "source": "auto",
+                "importance": "high",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 3,
+                "protected": false,
+                "reason": "职业信息有助于提供贴合专业背景的建议。",
+                "createdAt": "2026-10-26T11:51:45.320Z",
+                "updatedAt": "2026-10-26T11:51:45.320Z"
+              }
+            ],
+            "projects": {},
+            "jobs": {
+              "counts": {
+                "completed": 1
+              },
+              "lastError": null
+            }
+          }
+        }
+      ],
+      "completed": true
+    },
+    {
+      "id": "device-alt",
+      "checks": [
+        {
+          "question": "我拥有哪款望远镜？",
+          "answer": "你拥有的是**星特朗 8SE**望远镜。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"0\" count=\"1\">\n- (id:aab4dc94-7440-40ce-8835-5858c55e5a3e, fact) 用户的望远镜是星特朗 8SE。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 872,
+          "ms": 1764.7531000000017
+        },
+        {
+          "question": "我现在拥有什么型号的望远镜？",
+          "answer": "你现在拥有的望远镜型号是：信达 150P。",
+          "recalled": "<ltm-memory rev=\"4\" epoch=\"1\" count=\"1\">\n- (id:aab4dc94-7440-40ce-8835-5858c55e5a3e, fact) 用户已转让星特朗 8SE，现在的望远镜是信达 150P。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 995,
+          "ms": 2078.029300000002
+        },
+        {
+          "question": "我喜欢观测什么？",
+          "answer": "你喜欢观测月面。",
+          "recalled": "<ltm-memory rev=\"4\" epoch=\"1\" count=\"1\">\n- (id:6ff889a7-9279-4a6a-b505-b153312d37d6, preference) 用户喜欢观测月面。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 954,
+          "ms": 1837.865099999999
+        },
+        {
+          "question": "我对锐化处理有什么偏好？",
+          "answer": "你偏好平时拍摄不做过度锐化。",
+          "recalled": "<ltm-memory rev=\"4\" epoch=\"1\" count=\"1\">\n- (id:bcf1fd1d-fd48-4ebb-9b2b-41468c7a3220, preference) 用户平时拍摄不做过度锐化。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 921,
+          "ms": 2597.6443999999974
+        },
+        {
+          "question": "我的望远镜现在是什么型号？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": true,
+          "recallMs": 983,
+          "ms": 2414.4977999999974
+        }
+      ],
+      "writes": [
+        {
+          "operation": "ingest",
+          "diagnostics": {
+            "global": [
+              {
+                "id": "aab4dc94-7440-40ce-8835-5858c55e5a3e",
+                "text": "用户的望远镜是星特朗 8SE。",
+                "kind": "fact",
+                "scopeId": "733061a8-f6f0-43c9-a029-293c28e3b6d1",
+                "scope": "global",
+                "source": "auto",
+                "importance": "high",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 1,
+                "protected": false,
+                "reason": "设备型号会影响天文观测与拍摄建议的针对性。",
+                "createdAt": "2026-10-26T11:51:59.967Z",
+                "updatedAt": "2026-10-26T11:51:59.967Z"
+              },
+              {
+                "id": "6ff889a7-9279-4a6a-b505-b153312d37d6",
+                "text": "用户喜欢观测月面。",
+                "kind": "preference",
+                "scopeId": "733061a8-f6f0-43c9-a029-293c28e3b6d1",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 2,
+                "protected": false,
+                "reason": "观测偏好有助于未来推荐目标、器材和拍摄方案。",
+                "createdAt": "2026-10-26T11:51:59.967Z",
+                "updatedAt": "2026-10-26T11:51:59.967Z"
+              },
+              {
+                "id": "bcf1fd1d-fd48-4ebb-9b2b-41468c7a3220",
+                "text": "用户平时拍摄不做过度锐化。",
+                "kind": "preference",
+                "scopeId": "733061a8-f6f0-43c9-a029-293c28e3b6d1",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 3,
+                "protected": false,
+                "reason": "后期处理偏好会影响未来拍摄与修图建议。",
+                "createdAt": "2026-10-26T11:51:59.968Z",
+                "updatedAt": "2026-10-26T11:51:59.968Z"
+              }
+            ],
+            "projects": {},
+            "jobs": {
+              "counts": {
+                "completed": 1
+              },
+              "lastError": null
+            }
+          }
+        },
+        {
+          "operation": "ingest",
+          "diagnostics": {
+            "global": [
+              {
+                "id": "aab4dc94-7440-40ce-8835-5858c55e5a3e",
+                "text": "用户已转让星特朗 8SE，现在的望远镜是信达 150P。",
+                "kind": "fact",
+                "scopeId": "733061a8-f6f0-43c9-a029-293c28e3b6d1",
+                "scope": "global",
+                "source": "auto",
+                "importance": "high",
+                "confidence": "high",
+                "status": "active",
+                "version": 2,
+                "revision": 4,
+                "protected": false,
+                "reason": "设备型号会影响天文观测与拍摄建议的针对性。",
+                "createdAt": "2026-10-26T11:51:59.967Z",
+                "updatedAt": "2026-10-26T11:52:04.455Z"
+              },
+              {
+                "id": "6ff889a7-9279-4a6a-b505-b153312d37d6",
+                "text": "用户喜欢观测月面。",
+                "kind": "preference",
+                "scopeId": "733061a8-f6f0-43c9-a029-293c28e3b6d1",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 2,
+                "protected": false,
+                "reason": "观测偏好有助于未来推荐目标、器材和拍摄方案。",
+                "createdAt": "2026-10-26T11:51:59.967Z",
+                "updatedAt": "2026-10-26T11:51:59.967Z"
+              },
+              {
+                "id": "bcf1fd1d-fd48-4ebb-9b2b-41468c7a3220",
+                "text": "用户平时拍摄不做过度锐化。",
+                "kind": "preference",
+                "scopeId": "733061a8-f6f0-43c9-a029-293c28e3b6d1",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 3,
+                "protected": false,
+                "reason": "后期处理偏好会影响未来拍摄与修图建议。",
+                "createdAt": "2026-10-26T11:51:59.968Z",
+                "updatedAt": "2026-10-26T11:51:59.968Z"
+              }
+            ],
+            "projects": {},
+            "jobs": {
+              "counts": {
+                "completed": 2
+              },
+              "lastError": null
+            }
+          }
+        },
+        {
+          "operation": "forget",
+          "diagnostics": {
+            "global": [
+              {
+                "id": "6ff889a7-9279-4a6a-b505-b153312d37d6",
+                "text": "用户喜欢观测月面。",
+                "kind": "preference",
+                "scopeId": "733061a8-f6f0-43c9-a029-293c28e3b6d1",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 2,
+                "protected": false,
+                "reason": "观测偏好有助于未来推荐目标、器材和拍摄方案。",
+                "createdAt": "2026-10-26T11:51:59.967Z",
+                "updatedAt": "2026-10-26T11:51:59.967Z"
+              },
+              {
+                "id": "bcf1fd1d-fd48-4ebb-9b2b-41468c7a3220",
+                "text": "用户平时拍摄不做过度锐化。",
+                "kind": "preference",
+                "scopeId": "733061a8-f6f0-43c9-a029-293c28e3b6d1",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 3,
+                "protected": false,
+                "reason": "后期处理偏好会影响未来拍摄与修图建议。",
+                "createdAt": "2026-10-26T11:51:59.968Z",
+                "updatedAt": "2026-10-26T11:51:59.968Z"
+              }
+            ],
+            "projects": {},
+            "jobs": {
+              "counts": {
+                "completed": 2
+              },
+              "lastError": null
+            }
+          }
+        }
+      ],
+      "completed": true
+    },
+    {
+      "id": "club-alt",
+      "checks": [
+        {
+          "question": "我主持的桌游社叫什么？",
+          "answer": "白鹭桌游社。",
+          "recalled": "<ltm-memory rev=\"1\" epoch=\"0\" count=\"1\">\n- (id:2c3794f1-688d-4d90-aa7e-4699c4e411a5, project) 用户主持白鹭桌游社，固定每月第一个周日下午在银杏茶馆玩桌游，活动口令是“灯塔亮了”。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 976,
+          "ms": 2002.7873000000036
+        },
+        {
+          "question": "桌游社原来在什么地方活动？",
+          "answer": "银杏茶馆。",
+          "recalled": "<ltm-memory rev=\"1\" epoch=\"0\" count=\"1\">\n- (id:2c3794f1-688d-4d90-aa7e-4699c4e411a5, project) 用户主持白鹭桌游社，固定每月第一个周日下午在银杏茶馆玩桌游，活动口令是“灯塔亮了”。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 1027,
+          "ms": 2285.9893999999986
+        },
+        {
+          "question": "桌游社现在固定什么时候活动？",
+          "answer": "每月第三个周六上午。",
+          "recalled": "<ltm-memory rev=\"2\" epoch=\"1\" count=\"1\">\n- (id:2c3794f1-688d-4d90-aa7e-4699c4e411a5, project) 用户主持白鹭桌游社，固定每月第三个周六上午在红砖咖啡馆碰面，活动口令是“灯塔亮了”。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 784,
+          "ms": 1680.7204000000056
+        },
+        {
+          "question": "桌游社现在的固定地点是什么？",
+          "answer": "红砖咖啡馆。",
+          "recalled": "<ltm-memory rev=\"2\" epoch=\"1\" count=\"1\">\n- (id:2c3794f1-688d-4d90-aa7e-4699c4e411a5, project) 用户主持白鹭桌游社，固定每月第三个周六上午在红砖咖啡馆碰面，活动口令是“灯塔亮了”。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 959,
+          "ms": 2141.7459000000017
+        },
+        {
+          "question": "活动口令是什么？",
+          "answer": "活动口令是“灯塔亮了”。",
+          "recalled": "<ltm-memory rev=\"2\" epoch=\"1\" count=\"1\">\n- (id:2c3794f1-688d-4d90-aa7e-4699c4e411a5, project) 用户主持白鹭桌游社，固定每月第三个周六上午在红砖咖啡馆碰面，活动口令是“灯塔亮了”。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 1172,
+          "ms": 2096.8678
+        }
+      ],
+      "writes": [
+        {
+          "operation": "ingest",
+          "diagnostics": {
+            "global": [
+              {
+                "id": "2c3794f1-688d-4d90-aa7e-4699c4e411a5",
+                "text": "用户主持白鹭桌游社，固定每月第一个周日下午在银杏茶馆玩桌游，活动口令是“灯塔亮了”。",
+                "kind": "project",
+                "scopeId": "25bed2f5-5e2c-44fd-b640-288942f68f82",
+                "scope": "global",
+                "source": "auto",
+                "importance": "high",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 1,
+                "protected": false,
+                "reason": "这是用户长期主持的社团活动，固定时间、地点和口令对后续安排与回答有持续价值。",
+                "createdAt": "2026-10-26T11:52:19.090Z",
+                "updatedAt": "2026-10-26T11:52:19.090Z"
+              }
+            ],
+            "projects": {},
+            "jobs": {
+              "counts": {
+                "completed": 1
+              },
+              "lastError": null
+            }
+          }
+        },
+        {
+          "operation": "ingest",
+          "diagnostics": {
+            "global": [
+              {
+                "id": "2c3794f1-688d-4d90-aa7e-4699c4e411a5",
+                "text": "用户主持白鹭桌游社，固定每月第三个周六上午在红砖咖啡馆碰面，活动口令是“灯塔亮了”。",
+                "kind": "project",
+                "scopeId": "25bed2f5-5e2c-44fd-b640-288942f68f82",
+                "scope": "global",
+                "source": "auto",
+                "importance": "high",
+                "confidence": "high",
+                "status": "active",
+                "version": 2,
+                "revision": 2,
+                "protected": false,
+                "reason": "这是用户长期主持的社团活动，固定时间、地点和口令对后续安排与回答有持续价值。",
+                "createdAt": "2026-10-26T11:52:19.090Z",
+                "updatedAt": "2026-10-26T11:52:27.722Z"
+              }
+            ],
+            "projects": {},
+            "jobs": {
+              "counts": {
+                "completed": 2
+              },
+              "lastError": null
+            }
+          }
+        }
+      ],
+      "completed": true
+    },
+    {
+      "id": "diet-alt",
+      "checks": [
+        {
+          "question": "我平常喝酒吗？",
+          "answer": "不喝。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"0\" count=\"1\">\n- (id:1c3fdf7c-5d75-42c8-a11b-37e46ab45b9b, preference) 用户日常不喝酒。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 967,
+          "ms": 2089.054799999998
+        },
+        {
+          "question": "我日常做几人份的饭？",
+          "answer": "一人份。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"0\" count=\"1\">\n- (id:d8ce06d1-5af6-442f-ad78-fa0787626b8e, fact) 用户平常一个人做饭。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 813,
+          "ms": 2599.453400000006
+        },
+        {
+          "question": "我的长期口味是什么？",
+          "answer": "你的长期口味偏酸甜。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"0\" count=\"1\">\n- (id:85648d88-9a27-4955-b006-c409e107d1a5, preference) 用户口味偏酸甜。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 873,
+          "ms": 2006.6120999999985
+        },
+        {
+          "question": "我平常喜欢什么味道？",
+          "answer": "你平常口味偏酸甜。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"0\" count=\"1\">\n- (id:85648d88-9a27-4955-b006-c409e107d1a5, preference) 用户口味偏酸甜。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 871,
+          "ms": 1799.8179999999993
+        },
+        {
+          "question": "我不能吃的过敏食材是什么？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": true,
+          "recallMs": 825,
+          "ms": 2205.146900000007
+        }
+      ],
+      "writes": [
+        {
+          "operation": "ingest",
+          "diagnostics": {
+            "global": [
+              {
+                "id": "1c3fdf7c-5d75-42c8-a11b-37e46ab45b9b",
+                "text": "用户日常不喝酒。",
+                "kind": "preference",
+                "scopeId": "c66ee393-6f7c-4d61-a39d-0add4ead4eb6",
+                "scope": "global",
+                "source": "auto",
+                "importance": "high",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 1,
+                "protected": false,
+                "reason": "饮食饮酒习惯会影响未来推荐饮品、聚餐安排等回答。",
+                "createdAt": "2026-10-26T11:52:37.816Z",
+                "updatedAt": "2026-10-26T11:52:37.816Z"
+              },
+              {
+                "id": "d8ce06d1-5af6-442f-ad78-fa0787626b8e",
+                "text": "用户平常一个人做饭。",
+                "kind": "fact",
+                "scopeId": "c66ee393-6f7c-4d61-a39d-0add4ead4eb6",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 2,
+                "protected": false,
+                "reason": "有助于理解用户日常饮食与生活安排。",
+                "createdAt": "2026-10-26T11:52:37.816Z",
+                "updatedAt": "2026-10-26T11:52:37.816Z"
+              },
+              {
+                "id": "85648d88-9a27-4955-b006-c409e107d1a5",
+                "text": "用户口味偏酸甜。",
+                "kind": "preference",
+                "scopeId": "c66ee393-6f7c-4d61-a39d-0add4ead4eb6",
+                "scope": "global",
+                "source": "auto",
+                "importance": "high",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 3,
+                "protected": false,
+                "reason": "口味偏好对未来餐饮推荐和菜谱建议有长期价值。",
+                "createdAt": "2026-10-26T11:52:37.816Z",
+                "updatedAt": "2026-10-26T11:52:37.816Z"
+              }
+            ],
+            "projects": {},
+            "jobs": {
+              "counts": {
+                "completed": 1
+              },
+              "lastError": null
+            }
+          }
+        },
+        {
+          "operation": "ingest",
+          "diagnostics": {
+            "global": [
+              {
+                "id": "1c3fdf7c-5d75-42c8-a11b-37e46ab45b9b",
+                "text": "用户日常不喝酒。",
+                "kind": "preference",
+                "scopeId": "c66ee393-6f7c-4d61-a39d-0add4ead4eb6",
+                "scope": "global",
+                "source": "auto",
+                "importance": "high",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 1,
+                "protected": false,
+                "reason": "饮食饮酒习惯会影响未来推荐饮品、聚餐安排等回答。",
+                "createdAt": "2026-10-26T11:52:37.816Z",
+                "updatedAt": "2026-10-26T11:52:37.816Z"
+              },
+              {
+                "id": "d8ce06d1-5af6-442f-ad78-fa0787626b8e",
+                "text": "用户平常一个人做饭。",
+                "kind": "fact",
+                "scopeId": "c66ee393-6f7c-4d61-a39d-0add4ead4eb6",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 2,
+                "protected": false,
+                "reason": "有助于理解用户日常饮食与生活安排。",
+                "createdAt": "2026-10-26T11:52:37.816Z",
+                "updatedAt": "2026-10-26T11:52:37.816Z"
+              },
+              {
+                "id": "85648d88-9a27-4955-b006-c409e107d1a5",
+                "text": "用户口味偏酸甜。",
+                "kind": "preference",
+                "scopeId": "c66ee393-6f7c-4d61-a39d-0add4ead4eb6",
+                "scope": "global",
+                "source": "auto",
+                "importance": "high",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 3,
+                "protected": false,
+                "reason": "口味偏好对未来餐饮推荐和菜谱建议有长期价值。",
+                "createdAt": "2026-10-26T11:52:37.816Z",
+                "updatedAt": "2026-10-26T11:52:37.816Z"
+              }
+            ],
+            "projects": {},
+            "jobs": {
+              "counts": {
+                "completed": 2
+              },
+              "lastError": null
+            }
+          }
+        }
+      ],
+      "completed": true
+    },
+    {
+      "id": "projects-alt",
+      "checks": [
+        {
+          "question": "本项目接口使用哪个端口？",
+          "answer": "本项目接口使用端口 6329。",
+          "recalled": "<ltm-memory rev=\"6\" epoch=\"0\" count=\"1\">\n- (id:423ffcf7-7661-4437-a192-32108b5bb07c, project) 用户当前项目的接口端口固定为 6329。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 556,
+          "ms": 1129.8797999999952
+        },
+        {
+          "question": "本项目采用什么持久存储？",
+          "answer": "MariaDB。",
+          "recalled": "<ltm-memory rev=\"6\" epoch=\"0\" count=\"1\">\n- (id:cd6e346b-22f7-4fe6-9ab4-bce7687bf1fb, project) 用户当前项目的持久层使用 MariaDB。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 771,
+          "ms": 1742.4993000000104
+        },
+        {
+          "question": "本项目接口使用哪个端口？",
+          "answer": "本项目接口使用端口 **8547**。",
+          "recalled": "<ltm-memory rev=\"6\" epoch=\"0\" count=\"1\">\n- (id:54968ae9-0fa9-40f6-be3d-67d87ba984bf, constraint) 用户当前项目的接口端口固定为 8547。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 931,
+          "ms": 1755.949299999993
+        },
+        {
+          "question": "本项目采用什么持久存储？",
+          "answer": "Redis。",
+          "recalled": "<ltm-memory rev=\"6\" epoch=\"0\" count=\"1\">\n- (id:99a7369a-4d0e-4aeb-88f3-7d1bb2d5d2dd, project) 用户当前项目的持久层使用 Redis。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 976,
+          "ms": 2066.218399999998
+        },
+        {
+          "question": "潮汐项目的端口是多少？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": true,
+          "recallMs": 0,
+          "ms": 1015.7115999999951
+        },
+        {
+          "question": "潮汐项目端口是多少？",
+          "answer": "没有记录。",
+          "recalled": "<ltm-memory rev=\"6\" epoch=\"0\" count=\"1\">\n- (id:54968ae9-0fa9-40f6-be3d-67d87ba984bf, constraint) 用户当前项目的接口端口固定为 8547。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 1064,
+          "ms": 1960.499100000001
+        }
+      ],
+      "writes": [
+        {
+          "operation": "ingest",
+          "diagnostics": {
+            "global": [],
+            "projects": {
+              "tide": [
+                {
+                  "id": "405147db-149b-4588-9c84-d3706ae07c19",
+                  "text": "用户当前项目名为潮汐。",
+                  "kind": "project",
+                  "scopeId": "942db6a1-48f4-428e-b0ac-33cfc7c6ef5b",
+                  "scope": "project",
+                  "source": "auto",
+                  "importance": "high",
+                  "confidence": "high",
+                  "status": "active",
+                  "version": 1,
+                  "revision": 1,
+                  "protected": false,
+                  "reason": "项目名称是后续识别和讨论该工程的基础信息。",
+                  "createdAt": "2026-10-26T11:52:54.872Z",
+                  "updatedAt": "2026-10-26T11:52:54.872Z"
+                },
+                {
+                  "id": "423ffcf7-7661-4437-a192-32108b5bb07c",
+                  "text": "用户当前项目的接口端口固定为 6329。",
+                  "kind": "project",
+                  "scopeId": "942db6a1-48f4-428e-b0ac-33cfc7c6ef5b",
+                  "scope": "project",
+                  "source": "auto",
+                  "importance": "high",
+                  "confidence": "high",
+                  "status": "active",
+                  "version": 1,
+                  "revision": 2,
+                  "protected": false,
+                  "reason": "固定端口是项目配置和联调时的重要约束。",
+                  "createdAt": "2026-10-26T11:52:54.873Z",
+                  "updatedAt": "2026-10-26T11:52:54.873Z"
+                },
+                {
+                  "id": "cd6e346b-22f7-4fe6-9ab4-bce7687bf1fb",
+                  "text": "用户当前项目的持久层使用 MariaDB。",
+                  "kind": "project",
+                  "scopeId": "942db6a1-48f4-428e-b0ac-33cfc7c6ef5b",
+                  "scope": "project",
+                  "source": "auto",
+                  "importance": "high",
+                  "confidence": "high",
+                  "status": "active",
+                  "version": 1,
+                  "revision": 3,
+                  "protected": false,
+                  "reason": "持久层选型会影响数据库相关实现和配置建议。",
+                  "createdAt": "2026-10-26T11:52:54.873Z",
+                  "updatedAt": "2026-10-26T11:52:54.873Z"
+                }
+              ]
+            },
+            "jobs": {
+              "counts": {
+                "completed": 1
+              },
+              "lastError": null
+            }
+          }
+        },
+        {
+          "operation": "ingest",
+          "diagnostics": {
+            "global": [],
+            "projects": {
+              "tide": [
+                {
+                  "id": "405147db-149b-4588-9c84-d3706ae07c19",
+                  "text": "用户当前项目名为潮汐。",
+                  "kind": "project",
+                  "scopeId": "942db6a1-48f4-428e-b0ac-33cfc7c6ef5b",
+                  "scope": "project",
+                  "source": "auto",
+                  "importance": "high",
+                  "confidence": "high",
+                  "status": "active",
+                  "version": 1,
+                  "revision": 1,
+                  "protected": false,
+                  "reason": "项目名称是后续识别和讨论该工程的基础信息。",
+                  "createdAt": "2026-10-26T11:52:54.872Z",
+                  "updatedAt": "2026-10-26T11:52:54.872Z"
+                },
+                {
+                  "id": "423ffcf7-7661-4437-a192-32108b5bb07c",
+                  "text": "用户当前项目的接口端口固定为 6329。",
+                  "kind": "project",
+                  "scopeId": "942db6a1-48f4-428e-b0ac-33cfc7c6ef5b",
+                  "scope": "project",
+                  "source": "auto",
+                  "importance": "high",
+                  "confidence": "high",
+                  "status": "active",
+                  "version": 1,
+                  "revision": 2,
+                  "protected": false,
+                  "reason": "固定端口是项目配置和联调时的重要约束。",
+                  "createdAt": "2026-10-26T11:52:54.873Z",
+                  "updatedAt": "2026-10-26T11:52:54.873Z"
+                },
+                {
+                  "id": "cd6e346b-22f7-4fe6-9ab4-bce7687bf1fb",
+                  "text": "用户当前项目的持久层使用 MariaDB。",
+                  "kind": "project",
+                  "scopeId": "942db6a1-48f4-428e-b0ac-33cfc7c6ef5b",
+                  "scope": "project",
+                  "source": "auto",
+                  "importance": "high",
+                  "confidence": "high",
+                  "status": "active",
+                  "version": 1,
+                  "revision": 3,
+                  "protected": false,
+                  "reason": "持久层选型会影响数据库相关实现和配置建议。",
+                  "createdAt": "2026-10-26T11:52:54.873Z",
+                  "updatedAt": "2026-10-26T11:52:54.873Z"
+                }
+              ],
+              "pine": [
+                {
+                  "id": "00038c33-6247-4312-bef4-8fb1c36f0f72",
+                  "text": "用户当前绑定的项目名为松柏。",
+                  "kind": "project",
+                  "scopeId": "af9f7b88-db40-47bb-814a-752d523fadb2",
+                  "scope": "project",
+                  "source": "auto",
+                  "importance": "medium",
+                  "confidence": "high",
+                  "status": "active",
+                  "version": 1,
+                  "revision": 4,
+                  "protected": false,
+                  "reason": "项目名称是后续识别和引用当前工程的基础信息。",
+                  "createdAt": "2026-10-26T11:52:59.235Z",
+                  "updatedAt": "2026-10-26T11:52:59.235Z"
+                },
+                {
+                  "id": "54968ae9-0fa9-40f6-be3d-67d87ba984bf",
+                  "text": "用户当前项目的接口端口固定为 8547。",
+                  "kind": "constraint",
+                  "scopeId": "af9f7b88-db40-47bb-814a-752d523fadb2",
+                  "scope": "project",
+                  "source": "auto",
+                  "importance": "high",
+                  "confidence": "high",
+                  "status": "active",
+                  "version": 1,
+                  "revision": 5,
+                  "protected": false,
+                  "reason": "固定端口属于项目配置约束，影响接口调用和部署。",
+                  "createdAt": "2026-10-26T11:52:59.236Z",
+                  "updatedAt": "2026-10-26T11:52:59.236Z"
+                },
+                {
+                  "id": "99a7369a-4d0e-4aeb-88f3-7d1bb2d5d2dd",
+                  "text": "用户当前项目的持久层使用 Redis。",
+                  "kind": "project",
+                  "scopeId": "af9f7b88-db40-47bb-814a-752d523fadb2",
+                  "scope": "project",
+                  "source": "auto",
+                  "importance": "high",
+                  "confidence": "high",
+                  "status": "active",
+                  "version": 1,
+                  "revision": 6,
+                  "protected": false,
+                  "reason": "持久层技术选型会影响数据存储与代码实现。",
+                  "createdAt": "2026-10-26T11:52:59.236Z",
+                  "updatedAt": "2026-10-26T11:52:59.236Z"
+                }
+              ]
+            },
+            "jobs": {
+              "counts": {
+                "completed": 2
+              },
+              "lastError": null
+            }
+          }
+        }
+      ],
+      "completed": true
+    },
+    {
+      "id": "hypothesis-alt",
+      "checks": [
+        {
+          "question": "我的常住城市是哪座？",
+          "answer": "宜昌。",
+          "recalled": "<ltm-memory rev=\"2\" epoch=\"0\" count=\"1\">\n- (id:cd317a89-b0bd-46c4-92de-aee18b6f872b, fact) 用户定居在宜昌。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 1055,
+          "ms": 2235.740399999995
+        },
+        {
+          "question": "我的职业是什么？",
+          "answer": "你的职业是航模教练。",
+          "recalled": "<ltm-memory rev=\"2\" epoch=\"0\" count=\"1\">\n- (id:c0112096-beac-4c18-9bc8-0f7c34546ff3, fact) 用户的工作是航模教练。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 1089,
+          "ms": 1932.2280000000028
+        },
+        {
+          "question": "我报名了哪家帆船学校？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": true,
+          "recallMs": 827,
+          "ms": 2009.2402000000002
+        },
+        {
+          "question": "我已经取得的帆船证书叫什么？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": true,
+          "recallMs": 781,
+          "ms": 1755.7409000000043
+        },
+        {
+          "question": "我自己的帆船型号是什么？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": true,
+          "recallMs": 602,
+          "ms": 1694.9472999999998
+        }
+      ],
+      "writes": [
+        {
+          "operation": "ingest",
+          "diagnostics": {
+            "global": [
+              {
+                "id": "cd317a89-b0bd-46c4-92de-aee18b6f872b",
+                "text": "用户定居在宜昌。",
+                "kind": "fact",
+                "scopeId": "e76c0e0a-1c7e-4649-afc0-e4ea0280e697",
+                "scope": "global",
+                "source": "auto",
+                "importance": "high",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 1,
+                "protected": false,
+                "reason": "常住城市是长期个人背景，影响生活与活动建议。",
+                "createdAt": "2026-10-26T11:53:12.930Z",
+                "updatedAt": "2026-10-26T11:53:12.930Z"
+              },
+              {
+                "id": "c0112096-beac-4c18-9bc8-0f7c34546ff3",
+                "text": "用户的工作是航模教练。",
+                "kind": "fact",
+                "scopeId": "e76c0e0a-1c7e-4649-afc0-e4ea0280e697",
+                "scope": "global",
+                "source": "auto",
+                "importance": "high",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 2,
+                "protected": false,
+                "reason": "职业信息可长期用于理解用户背景与专业建议。",
+                "createdAt": "2026-10-26T11:53:12.931Z",
+                "updatedAt": "2026-10-26T11:53:12.931Z"
+              }
+            ],
+            "projects": {},
+            "jobs": {
+              "counts": {
+                "completed": 1
+              },
+              "lastError": null
+            }
+          }
+        }
+      ],
+      "completed": true
+    },
+    {
+      "id": "two-devices-alt",
+      "checks": [
+        {
+          "question": "我排练主要用什么乐器型号？",
+          "answer": "你排练主要使用 **雅马哈 YAS-62 萨克斯**。",
+          "recalled": "<ltm-memory rev=\"2\" epoch=\"0\" count=\"1\">\n- (id:d0e4ff7c-e39c-4e95-8959-f8a69aed28a8, fact) 用户拥有一把雅马哈 YAS-62 萨克斯，排练时主要使用它。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 915,
+          "ms": 2307.8312000000005
+        },
+        {
+          "question": "我旅行带的乐器型号是什么？",
+          "answer": "你旅行携带的乐器型号是 **Roland AE-20 电吹管**。",
+          "recalled": "<ltm-memory rev=\"2\" epoch=\"0\" count=\"1\">\n- (id:bb4d8b3b-47df-4c03-8476-f7625e8b519f, fact) 用户拥有一支 Roland AE-20 电吹管，旅行时携带它。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 832,
+          "ms": 3458.4494000000122
+        },
+        {
+          "question": "我排练用的乐器现在是什么型号？",
+          "answer": "你排练主要使用的是**柳泽 A-WO10 萨克斯**。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"1\" count=\"1\">\n- (id:d0e4ff7c-e39c-4e95-8959-f8a69aed28a8, fact) 用户拥有一把柳泽 A-WO10 萨克斯，排练时主要使用它。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 1161,
+          "ms": 2290.6996999999974
+        },
+        {
+          "question": "我旅行用的乐器现在是什么型号？",
+          "answer": "Roland AE-20 电吹管。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"1\" count=\"1\">\n- (id:bb4d8b3b-47df-4c03-8476-f7625e8b519f, fact) 用户拥有一支 Roland AE-20 电吹管，旅行时携带它。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 984,
+          "ms": 2222.675700000007
+        },
+        {
+          "question": "我自己的 AKAI 电吹管是什么型号？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": true,
+          "recallMs": 905,
+          "ms": 1783.7781000000105
+        }
+      ],
+      "writes": [
+        {
+          "operation": "ingest",
+          "diagnostics": {
+            "global": [
+              {
+                "id": "d0e4ff7c-e39c-4e95-8959-f8a69aed28a8",
+                "text": "用户拥有一把雅马哈 YAS-62 萨克斯，排练时主要使用它。",
+                "kind": "fact",
+                "scopeId": "57f87da5-7247-4025-9f6c-c9faf67e8699",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 1,
+                "protected": false,
+                "reason": "可帮助未来回答与萨克斯使用、排练安排相关的问题。",
+                "createdAt": "2026-10-26T11:53:27.945Z",
+                "updatedAt": "2026-10-26T11:53:27.945Z"
+              },
+              {
+                "id": "bb4d8b3b-47df-4c03-8476-f7625e8b519f",
+                "text": "用户拥有一支 Roland AE-20 电吹管，旅行时携带它。",
+                "kind": "fact",
+                "scopeId": "57f87da5-7247-4025-9f6c-c9faf67e8699",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 2,
+                "protected": false,
+                "reason": "可帮助未来回答与旅行乐器、电吹管使用相关的问题。",
+                "createdAt": "2026-10-26T11:53:27.946Z",
+                "updatedAt": "2026-10-26T11:53:27.946Z"
+              }
+            ],
+            "projects": {},
+            "jobs": {
+              "counts": {
+                "completed": 1
+              },
+              "lastError": null
+            }
+          }
+        },
+        {
+          "operation": "ingest",
+          "diagnostics": {
+            "global": [
+              {
+                "id": "d0e4ff7c-e39c-4e95-8959-f8a69aed28a8",
+                "text": "用户拥有一把柳泽 A-WO10 萨克斯，排练时主要使用它。",
+                "kind": "fact",
+                "scopeId": "57f87da5-7247-4025-9f6c-c9faf67e8699",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 2,
+                "revision": 3,
+                "protected": false,
+                "reason": "可帮助未来回答与萨克斯使用、排练安排相关的问题。",
+                "createdAt": "2026-10-26T11:53:27.945Z",
+                "updatedAt": "2026-10-26T11:53:36.264Z"
+              },
+              {
+                "id": "bb4d8b3b-47df-4c03-8476-f7625e8b519f",
+                "text": "用户拥有一支 Roland AE-20 电吹管，旅行时携带它。",
+                "kind": "fact",
+                "scopeId": "57f87da5-7247-4025-9f6c-c9faf67e8699",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 2,
+                "protected": false,
+                "reason": "可帮助未来回答与旅行乐器、电吹管使用相关的问题。",
+                "createdAt": "2026-10-26T11:53:27.946Z",
+                "updatedAt": "2026-10-26T11:53:27.946Z"
+              }
+            ],
+            "projects": {},
+            "jobs": {
+              "counts": {
+                "completed": 2
+              },
+              "lastError": null
+            }
+          }
+        }
+      ],
+      "completed": true
+    },
+    {
+      "id": "long-alt",
+      "checks": [
+        {
+          "question": "我的姓名是什么？",
+          "answer": "你的姓名是柳澄。",
+          "recalled": "<ltm-memory rev=\"9\" epoch=\"0\" count=\"1\">\n- (id:dcea3378-99ad-4a74-b6ac-a2db3a516ded, fact) 用户的名字是柳澄。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 943,
+          "ms": 2149.464100000012
+        },
+        {
+          "question": "我用什么软件绘图？",
+          "answer": "你一直使用 **Inkscape** 绘图。",
+          "recalled": "<ltm-memory rev=\"9\" epoch=\"0\" count=\"1\">\n- (id:6fc43e55-48e9-41d7-ab7d-9b9be717a172, preference) 用户绘图一直使用 Inkscape。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 648,
+          "ms": 1648.4954000000143
+        },
+        {
+          "question": "我学习什么乐器？",
+          "answer": "你学习单簧管。",
+          "recalled": "<ltm-memory rev=\"9\" epoch=\"0\" count=\"1\">\n- (id:da152a79-5da0-47c2-b3f8-e1fe80f00e84, preference) 用户业余学习单簧管，每周四晚上固定练习。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 729,
+          "ms": 1707.239499999996
+        },
+        {
+          "question": "我每周什么时候做个人项目？",
+          "answer": "每周日晚上。",
+          "recalled": "<ltm-memory rev=\"9\" epoch=\"0\" count=\"1\">\n- (id:ec91a969-8e04-48cb-a62f-d9a0fd44388b, constraint) 用户只有每周日晚上能处理自己的项目。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 946,
+          "ms": 2070.3214000000153
+        },
+        {
+          "question": "我的书桌宽度是多少？",
+          "answer": "你的书桌宽度是85厘米。",
+          "recalled": "<ltm-memory rev=\"9\" epoch=\"0\" count=\"1\">\n- (id:b6c188e0-af5c-4484-8040-fabd983a16a9, constraint) 用户房间的书桌宽度为85厘米，摆放设备时必须考虑该尺寸。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 913,
+          "ms": 2021.334600000002
+        }
+      ],
+      "writes": [
+        {
+          "operation": "ingest",
+          "diagnostics": {
+            "global": [
+              {
+                "id": "dcea3378-99ad-4a74-b6ac-a2db3a516ded",
+                "text": "用户的名字是柳澄。",
+                "kind": "fact",
+                "scopeId": "663af59a-c7cd-4f78-8ffa-8c01c6b6caae",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 1,
+                "protected": false,
+                "reason": "姓名是跨会话识别用户的长期身份信息。",
+                "createdAt": "2026-10-26T11:53:57.328Z",
+                "updatedAt": "2026-10-26T11:53:57.328Z"
+              },
+              {
+                "id": "b00eaa4d-d017-4ab9-b3c1-ca5a99e498e0",
+                "text": "用户的常住地是绵阳。",
+                "kind": "fact",
+                "scopeId": "663af59a-c7cd-4f78-8ffa-8c01c6b6caae",
+                "scope": "global",
+                "source": "auto",
+                "importance": "high",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 2,
+                "protected": false,
+                "reason": "常住地会影响本地化建议与生活安排。",
+                "createdAt": "2026-10-26T11:53:57.328Z",
+                "updatedAt": "2026-10-26T11:53:57.328Z"
+              },
+              {
+                "id": "c6939ae6-a1e1-4d0a-8eb8-75f0d8b81547",
+                "text": "用户从事照明设计工作。",
+                "kind": "fact",
+                "scopeId": "663af59a-c7cd-4f78-8ffa-8c01c6b6caae",
+                "scope": "global",
+                "source": "auto",
+                "importance": "high",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 3,
+                "protected": false,
+                "reason": "职业背景有助于理解其项目与专业问题。",
+                "createdAt": "2026-10-26T11:53:57.328Z",
+                "updatedAt": "2026-10-26T11:53:57.328Z"
+              },
+              {
+                "id": "6fc43e55-48e9-41d7-ab7d-9b9be717a172",
+                "text": "用户绘图一直使用 Inkscape。",
+                "kind": "preference",
+                "scopeId": "663af59a-c7cd-4f78-8ffa-8c01c6b6caae",
+                "scope": "global",
+                "source": "auto",
+                "importance": "high",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 4,
+                "protected": false,
+                "reason": "常用绘图软件会影响后续操作指导与文件建议。",
+                "createdAt": "2026-10-26T11:53:57.329Z",
+                "updatedAt": "2026-10-26T11:53:57.329Z"
+              },
+              {
+                "id": "52620253-e908-467a-ad89-940bdf1a8731",
+                "text": "用户的日常操作系统是 Debian。",
+                "kind": "fact",
+                "scopeId": "663af59a-c7cd-4f78-8ffa-8c01c6b6caae",
+                "scope": "global",
+                "source": "auto",
+                "importance": "high",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 5,
+                "protected": false,
+                "reason": "操作系统信息影响软件安装、命令和技术支持。",
+                "createdAt": "2026-10-26T11:53:57.329Z",
+                "updatedAt": "2026-10-26T11:53:57.329Z"
+              },
+              {
+                "id": "da152a79-5da0-47c2-b3f8-e1fe80f00e84",
+                "text": "用户业余学习单簧管，每周四晚上固定练习。",
+                "kind": "preference",
+                "scopeId": "663af59a-c7cd-4f78-8ffa-8c01c6b6caae",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 6,
+                "protected": false,
+                "reason": "固定业余活动会影响时间安排与相关建议。",
+                "createdAt": "2026-10-26T11:53:57.329Z",
+                "updatedAt": "2026-10-26T11:53:57.329Z"
+              },
+              {
+                "id": "d604cc5f-c6bf-4dff-bdaf-619890a1a170",
+                "text": "用户的折叠车是大行 P8。",
+                "kind": "fact",
+                "scopeId": "663af59a-c7cd-4f78-8ffa-8c01c6b6caae",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 7,
+                "protected": false,
+                "reason": "个人设备信息可用于出行或器材相关建议。",
+                "createdAt": "2026-10-26T11:53:57.329Z",
+                "updatedAt": "2026-10-26T11:53:57.329Z"
+              },
+              {
+                "id": "ec91a969-8e04-48cb-a62f-d9a0fd44388b",
+                "text": "用户只有每周日晚上能处理自己的项目。",
+                "kind": "constraint",
+                "scopeId": "663af59a-c7cd-4f78-8ffa-8c01c6b6caae",
+                "scope": "global",
+                "source": "auto",
+                "importance": "high",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 8,
+                "protected": false,
+                "reason": "这是长期时间限制，会影响项目规划和任务安排。",
+                "createdAt": "2026-10-26T11:53:57.329Z",
+                "updatedAt": "2026-10-26T11:53:57.329Z"
+              },
+              {
+                "id": "b6c188e0-af5c-4484-8040-fabd983a16a9",
+                "text": "用户房间的书桌宽度为85厘米，摆放设备时必须考虑该尺寸。",
+                "kind": "constraint",
+                "scopeId": "663af59a-c7cd-4f78-8ffa-8c01c6b6caae",
+                "scope": "global",
+                "source": "auto",
+                "importance": "high",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 9,
+                "protected": false,
+                "reason": "书桌尺寸是长期空间约束，会影响设备摆放建议。",
+                "createdAt": "2026-10-26T11:53:57.329Z",
+                "updatedAt": "2026-10-26T11:53:57.329Z"
+              }
+            ],
+            "projects": {},
+            "jobs": {
+              "counts": {
+                "completed": 1
+              },
+              "lastError": null
+            }
+          }
+        }
+      ],
+      "completed": true
+    },
+    {
+      "id": "career-alt",
+      "checks": [
+        {
+          "question": "我目前的工作是什么？",
+          "answer": "你的目前工作是图书编辑。",
+          "recalled": "<ltm-memory rev=\"2\" epoch=\"0\" count=\"1\">\n- (id:0bbf2101-c4b7-402a-ab3e-39ed1c326680, fact) 用户的职业是图书编辑。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 935,
+          "ms": 1964.6438999999955
+        },
+        {
+          "question": "我当前的职业是什么？",
+          "answer": "你当前的职业是技术写作者。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"1\" count=\"1\">\n- (id:0bbf2101-c4b7-402a-ab3e-39ed1c326680, fact) 用户目前的职业是技术写作者。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 744,
+          "ms": 1768.5004999999946
+        },
+        {
+          "question": "我现在住哪里？",
+          "answer": "洛阳。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"1\" count=\"1\">\n- (id:9457fe6a-a167-4d3e-ac70-ed15160981b2, fact) 用户的常住城市是洛阳。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 1134,
+          "ms": 2036.3091999999888
+        },
+        {
+          "question": "我目前实际从事什么工作？",
+          "answer": "你目前从事的工作是技术写作者。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"1\" count=\"1\">\n- (id:0bbf2101-c4b7-402a-ab3e-39ed1c326680, fact) 用户目前的职业是技术写作者。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 770,
+          "ms": 1933.6297999999952
+        },
+        {
+          "question": "我的月收入具体是多少？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": true,
+          "recallMs": 940,
+          "ms": 1916.9651000000013
+        }
+      ],
+      "writes": [
+        {
+          "operation": "ingest",
+          "diagnostics": {
+            "global": [
+              {
+                "id": "9457fe6a-a167-4d3e-ac70-ed15160981b2",
+                "text": "用户的常住城市是洛阳。",
+                "kind": "fact",
+                "scopeId": "fe27137c-76fd-48b3-a338-0cb501648d3c",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 1,
+                "protected": false,
+                "reason": "常住地会影响未来回答中的本地化建议与生活安排。",
+                "createdAt": "2026-10-26T11:54:08.793Z",
+                "updatedAt": "2026-10-26T11:54:08.793Z"
+              },
+              {
+                "id": "0bbf2101-c4b7-402a-ab3e-39ed1c326680",
+                "text": "用户的职业是图书编辑。",
+                "kind": "fact",
+                "scopeId": "fe27137c-76fd-48b3-a338-0cb501648d3c",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 2,
+                "protected": false,
+                "reason": "职业信息有助于未来回答贴合用户的工作背景与专业需求。",
+                "createdAt": "2026-10-26T11:54:08.793Z",
+                "updatedAt": "2026-10-26T11:54:08.793Z"
+              }
+            ],
+            "projects": {},
+            "jobs": {
+              "counts": {
+                "completed": 1
+              },
+              "lastError": null
+            }
+          }
+        },
+        {
+          "operation": "ingest",
+          "diagnostics": {
+            "global": [
+              {
+                "id": "9457fe6a-a167-4d3e-ac70-ed15160981b2",
+                "text": "用户的常住城市是洛阳。",
+                "kind": "fact",
+                "scopeId": "fe27137c-76fd-48b3-a338-0cb501648d3c",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 1,
+                "protected": false,
+                "reason": "常住地会影响未来回答中的本地化建议与生活安排。",
+                "createdAt": "2026-10-26T11:54:08.793Z",
+                "updatedAt": "2026-10-26T11:54:08.793Z"
+              },
+              {
+                "id": "0bbf2101-c4b7-402a-ab3e-39ed1c326680",
+                "text": "用户目前的职业是技术写作者。",
+                "kind": "fact",
+                "scopeId": "fe27137c-76fd-48b3-a338-0cb501648d3c",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 2,
+                "revision": 3,
+                "protected": false,
+                "reason": "职业信息有助于未来回答贴合用户的工作背景与专业需求。",
+                "createdAt": "2026-10-26T11:54:08.793Z",
+                "updatedAt": "2026-10-26T11:54:12.615Z"
+              }
+            ],
+            "projects": {},
+            "jobs": {
+              "counts": {
+                "completed": 2
+              },
+              "lastError": null
+            }
+          }
+        },
+        {
+          "operation": "ingest",
+          "diagnostics": {
+            "global": [
+              {
+                "id": "9457fe6a-a167-4d3e-ac70-ed15160981b2",
+                "text": "用户的常住城市是洛阳。",
+                "kind": "fact",
+                "scopeId": "fe27137c-76fd-48b3-a338-0cb501648d3c",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 1,
+                "protected": false,
+                "reason": "常住地会影响未来回答中的本地化建议与生活安排。",
+                "createdAt": "2026-10-26T11:54:08.793Z",
+                "updatedAt": "2026-10-26T11:54:08.793Z"
+              },
+              {
+                "id": "0bbf2101-c4b7-402a-ab3e-39ed1c326680",
+                "text": "用户目前的职业是技术写作者。",
+                "kind": "fact",
+                "scopeId": "fe27137c-76fd-48b3-a338-0cb501648d3c",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 2,
+                "revision": 3,
+                "protected": false,
+                "reason": "职业信息有助于未来回答贴合用户的工作背景与专业需求。",
+                "createdAt": "2026-10-26T11:54:08.793Z",
+                "updatedAt": "2026-10-26T11:54:12.615Z"
+              }
+            ],
+            "projects": {},
+            "jobs": {
+              "counts": {
+                "completed": 3
+              },
+              "lastError": null
+            }
+          }
+        }
+      ],
+      "completed": true
+    },
+    {
+      "id": "forget-alt",
+      "checks": [
+        {
+          "question": "我家狗叫什么名字？",
+          "answer": "松糕。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"0\" count=\"1\">\n- (id:6cc4dfaf-41b0-4e2b-b41b-cd7ec3e929d5, fact) 用户养了一只名叫松糕的柯基。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 863,
+          "ms": 1846.138799999986
+        },
+        {
+          "question": "我参加的陶艺社叫什么？",
+          "answer": "你参加的陶艺社叫“蓝鸟陶艺社”。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"0\" count=\"1\">\n- (id:a75a21c9-48f2-41ac-bd58-eb29acaa9ea5, project) 用户参加蓝鸟陶艺社，每周五有活动。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 1034,
+          "ms": 2004.3410999999905
+        },
+        {
+          "question": "我的狗叫什么名字？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": true,
+          "recallMs": 894,
+          "ms": 1909.2652999999991
+        },
+        {
+          "question": "我的陶艺社叫什么名字？",
+          "answer": "蓝鸟陶艺社。",
+          "recalled": "<ltm-memory rev=\"4\" epoch=\"1\" count=\"1\">\n- (id:a75a21c9-48f2-41ac-bd58-eb29acaa9ea5, project) 用户参加蓝鸟陶艺社，每周五有活动。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 1032,
+          "ms": 2070.7898000000278
+        },
+        {
+          "question": "我常住哪里？",
+          "answer": "台州。",
+          "recalled": "<ltm-memory rev=\"4\" epoch=\"1\" count=\"1\">\n- (id:09fcacdb-c0fb-4c48-9e49-e5b9211d24a0, fact) 用户长期住在台州。\n</ltm-memory>",
+          "passed": true,
+          "recallMs": 1019,
+          "ms": 1992.7868000000017
+        }
+      ],
+      "writes": [
+        {
+          "operation": "ingest",
+          "diagnostics": {
+            "global": [
+              {
+                "id": "6cc4dfaf-41b0-4e2b-b41b-cd7ec3e929d5",
+                "text": "用户养了一只名叫松糕的柯基。",
+                "kind": "fact",
+                "scopeId": "60613c93-6b27-436f-8977-5ae100d991f0",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 1,
+                "protected": false,
+                "reason": "宠物信息可用于后续涉及用户生活或宠物话题的连续交流。",
+                "createdAt": "2026-10-26T11:54:27.293Z",
+                "updatedAt": "2026-10-26T11:54:27.293Z"
+              },
+              {
+                "id": "a75a21c9-48f2-41ac-bd58-eb29acaa9ea5",
+                "text": "用户参加蓝鸟陶艺社，每周五有活动。",
+                "kind": "project",
+                "scopeId": "60613c93-6b27-436f-8977-5ae100d991f0",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 2,
+                "protected": false,
+                "reason": "持续的社团活动信息有助于未来安排和话题延续。",
+                "createdAt": "2026-10-26T11:54:27.294Z",
+                "updatedAt": "2026-10-26T11:54:27.294Z"
+              },
+              {
+                "id": "09fcacdb-c0fb-4c48-9e49-e5b9211d24a0",
+                "text": "用户长期住在台州。",
+                "kind": "fact",
+                "scopeId": "60613c93-6b27-436f-8977-5ae100d991f0",
+                "scope": "global",
+                "source": "auto",
+                "importance": "high",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 3,
+                "protected": false,
+                "reason": "常住地会影响地点、生活安排和本地化建议。",
+                "createdAt": "2026-10-26T11:54:27.294Z",
+                "updatedAt": "2026-10-26T11:54:27.294Z"
+              }
+            ],
+            "projects": {},
+            "jobs": {
+              "counts": {
+                "completed": 1
+              },
+              "lastError": null
+            }
+          }
+        },
+        {
+          "operation": "forget",
+          "diagnostics": {
+            "global": [
+              {
+                "id": "a75a21c9-48f2-41ac-bd58-eb29acaa9ea5",
+                "text": "用户参加蓝鸟陶艺社，每周五有活动。",
+                "kind": "project",
+                "scopeId": "60613c93-6b27-436f-8977-5ae100d991f0",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 2,
+                "protected": false,
+                "reason": "持续的社团活动信息有助于未来安排和话题延续。",
+                "createdAt": "2026-10-26T11:54:27.294Z",
+                "updatedAt": "2026-10-26T11:54:27.294Z"
+              },
+              {
+                "id": "09fcacdb-c0fb-4c48-9e49-e5b9211d24a0",
+                "text": "用户长期住在台州。",
+                "kind": "fact",
+                "scopeId": "60613c93-6b27-436f-8977-5ae100d991f0",
+                "scope": "global",
+                "source": "auto",
+                "importance": "high",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 3,
+                "protected": false,
+                "reason": "常住地会影响地点、生活安排和本地化建议。",
+                "createdAt": "2026-10-26T11:54:27.294Z",
+                "updatedAt": "2026-10-26T11:54:27.294Z"
+              }
+            ],
+            "projects": {},
+            "jobs": {
+              "counts": {
+                "completed": 1
+              },
+              "lastError": null
+            }
+          }
+        }
+      ],
+      "completed": true
+    }
+  ],
+  "total": 51,
+  "passed": 51,
+  "failed": 0,
+  "errors": 0,
+  "completed": true,
+  "expectedTotal": 51,
+  "unanswered": 0,
+  "endedAt": "2026-10-26T11:54:38.312Z",
+  "calls": 120,
+  "modelOutputs": [
+    {
+      "purpose": "spike-ltm",
+      "text": "[\n  {\n    \"decision\": \"save\",\n    \"kind\": \"fact\",\n    \"text\": \"用户的名字是闻溪。\",\n    \"importance\": \"medium\",\n    \"confidence\": \"high\",\n    \"reason\": \"姓名是长期身份信息，便于后续称呼和个性化回答。\",\n    \"evidence\": \"我是闻溪\",\n    \"scope\": \"global\"\n  },\n  {\n    \"decision\": \"save\",\n    \"kind\": \"fact\",\n    \"text\": \"用户长期在芜湖生活。\",\n    \"importance\": \"high\",\n    \"confidence\": \"high\",\n    \"reason\": \"常住地会影响本地生活、出行、服务建议等回答。\",\n    \"evidence\": \"在芜湖长期生活\",\n    \"scope\": \"global\"\n  },\n  {\n    \"decision\": \"save\",\n    \"kind\": \"fact\",\n    \"text\": \"用户的职业是园林规划师。\",\n    \"importance\": \"high\",\n    \"confidence\": \"high\",\n    \"reason\": \"职业信息有助于提供贴合专业背景的建议。\",\n    \"evidence\": \"职业是园林规划师\",\n    \"scope\": \"global\"\n  }\n]",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:29c2fab9-d9b2-4371-9b81-63b9c2b13118\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "记得，你的姓名是闻溪。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:0e23d6c0-6933-4e76-bde1-11190655d808\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "芜湖。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:abaec9a0-3a7d-4780-ad2b-9904e31e3e4f\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "你的工作是园林规划师。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "没有记录。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "没有记录。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm",
+      "text": "[\n  {\n    \"decision\": \"save\",\n    \"kind\": \"fact\",\n    \"text\": \"用户的望远镜是星特朗 8SE。\",\n    \"importance\": \"high\",\n    \"confidence\": \"high\",\n    \"reason\": \"设备型号会影响天文观测与拍摄建议的针对性。\",\n    \"evidence\": \"我自己的望远镜是星特朗 8SE\",\n    \"scope\": \"global\"\n  },\n  {\n    \"decision\": \"save\",\n    \"kind\": \"preference\",\n    \"text\": \"用户喜欢观测月面。\",\n    \"importance\": \"medium\",\n    \"confidence\": \"high\",\n    \"reason\": \"观测偏好有助于未来推荐目标、器材和拍摄方案。\",\n    \"evidence\": \"喜欢观测月面\",\n    \"scope\": \"global\"\n  },\n  {\n    \"decision\": \"save\",\n    \"kind\": \"preference\",\n    \"text\": \"用户平时拍摄不做过度锐化。\",\n    \"importance\": \"medium\",\n    \"confidence\": \"high\",\n    \"reason\": \"后期处理偏好会影响未来拍摄与修图建议。\",\n    \"evidence\": \"平时拍摄不做过度锐化\",\n    \"scope\": \"global\"\n  }\n]",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:aab4dc94-7440-40ce-8835-5858c55e5a3e\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "你拥有的是**星特朗 8SE**望远镜。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm",
+      "text": "[{\"decision\":\"update\",\"targetId\":\"aab4dc94-7440-40ce-8835-5858c55e5a3e\",\"kind\":\"fact\",\"text\":\"用户已转让星特朗 8SE，现在的望远镜是信达 150P。\",\"importance\":\"medium\",\"confidence\":\"high\",\"reason\":\"望远镜型号会影响观测建议和设备相关回答。\",\"evidence\":\"8SE 已经转让了。我现在自己的望远镜是信达 150P\",\"scope\":\"global\"}]",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:aab4dc94-7440-40ce-8835-5858c55e5a3e\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "你现在拥有的望远镜型号是：信达 150P。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:6ff889a7-9279-4a6a-b505-b153312d37d6\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "你喜欢观测月面。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:bcf1fd1d-fd48-4ebb-9b2b-41468c7a3220\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "你偏好平时拍摄不做过度锐化。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-forget",
+      "text": "{\"ids\":[\"aab4dc94-7440-40ce-8835-5858c55e5a3e\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "没有记录。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm",
+      "text": "[{\"decision\":\"save\",\"kind\":\"project\",\"text\":\"用户主持白鹭桌游社，固定每月第一个周日下午在银杏茶馆玩桌游，活动口令是“灯塔亮了”。\",\"importance\":\"high\",\"confidence\":\"high\",\"reason\":\"这是用户长期主持的社团活动，固定时间、地点和口令对后续安排与回答有持续价值。\",\"evidence\":\"我主持白鹭桌游社，固定每月第一个周日下午在银杏茶馆玩桌游，活动口令是灯塔亮了。\",\"scope\":\"global\"}]",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:2c3794f1-688d-4d90-aa7e-4699c4e411a5\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "白鹭桌游社。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:2c3794f1-688d-4d90-aa7e-4699c4e411a5\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "银杏茶馆。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm",
+      "text": "[{\"decision\":\"update\",\"targetId\":\"2c3794f1-688d-4d90-aa7e-4699c4e411a5\",\"kind\":\"fact\",\"text\":\"用户主持白鹭桌游社，固定每月第三个周六上午在红砖咖啡馆碰面，活动口令是“灯塔亮了”。\",\"importance\":\"high\",\"confidence\":\"high\",\"reason\":\"这是该桌游社固定时间与地点的明确变更，会影响未来安排与回答。\",\"evidence\":\"白鹭桌游社以后改到每月第三个周六上午，在红砖咖啡馆碰面，口令不变。\",\"scope\":\"global\"}]",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:2c3794f1-688d-4d90-aa7e-4699c4e411a5\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "每月第三个周六上午。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:2c3794f1-688d-4d90-aa7e-4699c4e411a5\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "红砖咖啡馆。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:2c3794f1-688d-4d90-aa7e-4699c4e411a5\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "活动口令是“灯塔亮了”。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm",
+      "text": "[\n  {\n    \"decision\": \"save\",\n    \"kind\": \"preference\",\n    \"text\": \"用户日常不喝酒。\",\n    \"importance\": \"high\",\n    \"confidence\": \"high\",\n    \"reason\": \"饮食饮酒习惯会影响未来推荐饮品、聚餐安排等回答。\",\n    \"evidence\": \"我日常不喝酒\",\n    \"scope\": \"global\"\n  },\n  {\n    \"decision\": \"save\",\n    \"kind\": \"fact\",\n    \"text\": \"用户平常一个人做饭。\",\n    \"importance\": \"medium\",\n    \"confidence\": \"high\",\n    \"reason\": \"有助于理解用户日常饮食与生活安排。\",\n    \"evidence\": \"平常一个人做饭\",\n    \"scope\": \"global\"\n  },\n  {\n    \"decision\": \"save\",\n    \"kind\": \"preference\",\n    \"text\": \"用户口味偏酸甜。\",\n    \"importance\": \"high\",\n    \"confidence\": \"high\",\n    \"reason\": \"口味偏好对未来餐饮推荐和菜谱建议有长期价值。\",\n    \"evidence\": \"口味偏酸甜\",\n    \"scope\": \"global\"\n  }\n]",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:1c3fdf7c-5d75-42c8-a11b-37e46ab45b9b\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "不喝。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:d8ce06d1-5af6-442f-ad78-fa0787626b8e\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "一人份。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:85648d88-9a27-4955-b006-c409e107d1a5\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "你的长期口味偏酸甜。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm",
+      "text": "[]",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:85648d88-9a27-4955-b006-c409e107d1a5\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "你平常口味偏酸甜。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "没有记录。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm",
+      "text": "[\n  {\n    \"decision\": \"save\",\n    \"kind\": \"project\",\n    \"text\": \"用户当前项目名为潮汐。\",\n    \"importance\": \"high\",\n    \"confidence\": \"high\",\n    \"reason\": \"项目名称是后续识别和讨论该工程的基础信息。\",\n    \"evidence\": \"当前项目叫潮汐\",\n    \"scope\": \"project\"\n  },\n  {\n    \"decision\": \"save\",\n    \"kind\": \"project\",\n    \"text\": \"用户当前项目的接口端口固定为 6329。\",\n    \"importance\": \"high\",\n    \"confidence\": \"high\",\n    \"reason\": \"固定端口是项目配置和联调时的重要约束。\",\n    \"evidence\": \"接口端口固定为 6329\",\n    \"scope\": \"project\"\n  },\n  {\n    \"decision\": \"save\",\n    \"kind\": \"project\",\n    \"text\": \"用户当前项目的持久层使用 MariaDB。\",\n    \"importance\": \"high\",\n    \"confidence\": \"high\",\n    \"reason\": \"持久层选型会影响数据库相关实现和配置建议。\",\n    \"evidence\": \"持久层用 MariaDB\",\n    \"scope\": \"project\"\n  }\n]",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm",
+      "text": "[\n  {\n    \"decision\": \"save\",\n    \"kind\": \"project\",\n    \"text\": \"用户当前绑定的项目名为松柏。\",\n    \"importance\": \"medium\",\n    \"confidence\": \"high\",\n    \"reason\": \"项目名称是后续识别和引用当前工程的基础信息。\",\n    \"evidence\": \"当前项目叫松柏\",\n    \"scope\": \"project\"\n  },\n  {\n    \"decision\": \"save\",\n    \"kind\": \"constraint\",\n    \"text\": \"用户当前项目的接口端口固定为 8547。\",\n    \"importance\": \"high\",\n    \"confidence\": \"high\",\n    \"reason\": \"固定端口属于项目配置约束，影响接口调用和部署。\",\n    \"evidence\": \"接口端口固定为 8547\",\n    \"scope\": \"project\"\n  },\n  {\n    \"decision\": \"save\",\n    \"kind\": \"project\",\n    \"text\": \"用户当前项目的持久层使用 Redis。\",\n    \"importance\": \"high\",\n    \"confidence\": \"high\",\n    \"reason\": \"持久层技术选型会影响数据存储与代码实现。\",\n    \"evidence\": \"持久层用 Redis\",\n    \"scope\": \"project\"\n  }\n]",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:423ffcf7-7661-4437-a192-32108b5bb07c\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "本项目接口使用端口 6329。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:cd6e346b-22f7-4fe6-9ab4-bce7687bf1fb\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "MariaDB。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:54968ae9-0fa9-40f6-be3d-67d87ba984bf\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "本项目接口使用端口 **8547**。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:99a7369a-4d0e-4aeb-88f3-7d1bb2d5d2dd\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "Redis。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "没有记录。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:54968ae9-0fa9-40f6-be3d-67d87ba984bf\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "没有记录。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm",
+      "text": "[\n  {\"decision\":\"save\",\"kind\":\"fact\",\"text\":\"用户定居在宜昌。\",\"importance\":\"high\",\"confidence\":\"high\",\"reason\":\"常住城市是长期个人背景，影响生活与活动建议。\",\"evidence\":\"我在宜昌定居\",\"scope\":\"global\"},\n  {\"decision\":\"save\",\"kind\":\"fact\",\"text\":\"用户的工作是航模教练。\",\"importance\":\"high\",\"confidence\":\"high\",\"reason\":\"职业信息可长期用于理解用户背景与专业建议。\",\"evidence\":\"工作是航模教练\",\"scope\":\"global\"}\n]",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:cd317a89-b0bd-46c4-92de-aee18b6f872b\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "宜昌。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:c0112096-beac-4c18-9bc8-0f7c34546ff3\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "你的职业是航模教练。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "没有记录。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "没有记录。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "没有记录。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm",
+      "text": "[{\"decision\":\"save\",\"kind\":\"fact\",\"text\":\"用户拥有一把雅马哈 YAS-62 萨克斯，排练时主要使用它。\",\"importance\":\"medium\",\"confidence\":\"high\",\"reason\":\"可帮助未来回答与萨克斯使用、排练安排相关的问题。\",\"evidence\":\"排练主要用雅马哈 YAS-62 萨克斯\",\"scope\":\"global\"},{\"decision\":\"save\",\"kind\":\"fact\",\"text\":\"用户拥有一支 Roland AE-20 电吹管，旅行时携带它。\",\"importance\":\"medium\",\"confidence\":\"high\",\"reason\":\"可帮助未来回答与旅行乐器、电吹管使用相关的问题。\",\"evidence\":\"旅行带 Roland AE-20 电吹管\",\"scope\":\"global\"}]",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:d0e4ff7c-e39c-4e95-8959-f8a69aed28a8\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "你排练主要使用 **雅马哈 YAS-62 萨克斯**。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:bb4d8b3b-47df-4c03-8476-f7625e8b519f\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "你旅行携带的乐器型号是 **Roland AE-20 电吹管**。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm",
+      "text": "[{\"decision\":\"update\",\"targetId\":\"d0e4ff7c-e39c-4e95-8959-f8a69aed28a8\",\"kind\":\"fact\",\"text\":\"用户拥有一把柳泽 A-WO10 萨克斯，排练时主要使用它。\",\"importance\":\"medium\",\"confidence\":\"high\",\"reason\":\"用户明确说明排练用萨克斯已从雅马哈 YAS-62 换成柳泽 A-WO10，需要更新当前设备事实。\",\"evidence\":\"排练用的雅马哈 YAS-62 已经换成柳泽 A-WO10\",\"scope\":\"global\"}]",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:d0e4ff7c-e39c-4e95-8959-f8a69aed28a8\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "你排练主要使用的是**柳泽 A-WO10 萨克斯**。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:bb4d8b3b-47df-4c03-8476-f7625e8b519f\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "Roland AE-20 电吹管。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "没有记录。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm",
+      "text": "[{\"decision\":\"save\",\"kind\":\"fact\",\"text\":\"用户的名字是柳澄。\",\"importance\":\"medium\",\"confidence\":\"high\",\"reason\":\"姓名是跨会话识别用户的长期身份信息。\",\"evidence\":\"我叫柳澄\",\"scope\":\"global\"},{\"decision\":\"save\",\"kind\":\"fact\",\"text\":\"用户的常住地是绵阳。\",\"importance\":\"high\",\"confidence\":\"high\",\"reason\":\"常住地会影响本地化建议与生活安排。\",\"evidence\":\"长住绵阳\",\"scope\":\"global\"},{\"decision\":\"save\",\"kind\":\"fact\",\"text\":\"用户从事照明设计工作。\",\"importance\":\"high\",\"confidence\":\"high\",\"reason\":\"职业背景有助于理解其项目与专业问题。\",\"evidence\":\"做照明设计\",\"scope\":\"global\"},{\"decision\":\"save\",\"kind\":\"preference\",\"text\":\"用户绘图一直使用 Inkscape。\",\"importance\":\"high\",\"confidence\":\"high\",\"reason\":\"常用绘图软件会影响后续操作指导与文件建议。\",\"evidence\":\"绘图一直用 Inkscape\",\"scope\":\"global\"},{\"decision\":\"save\",\"kind\":\"fact\",\"text\":\"用户的日常操作系统是 Debian。\",\"importance\":\"high\",\"confidence\":\"high\",\"reason\":\"操作系统信息影响软件安装、命令和技术支持。\",\"evidence\":\"日常系统是 Debian\",\"scope\":\"global\"},{\"decision\":\"save\",\"kind\":\"preference\",\"text\":\"用户业余学习单簧管，每周四晚上固定练习。\",\"importance\":\"medium\",\"confidence\":\"high\",\"reason\":\"固定业余活动会影响时间安排与相关建议。\",\"evidence\":\"业余学单簧管，每周四晚上固定练习\",\"scope\":\"global\"},{\"decision\":\"save\",\"kind\":\"fact\",\"text\":\"用户的折叠车是大行 P8。\",\"importance\":\"medium\",\"confidence\":\"high\",\"reason\":\"个人设备信息可用于出行或器材相关建议。\",\"evidence\":\"我的折叠车是大行 P8\",\"scope\":\"global\"},{\"decision\":\"save\",\"kind\":\"constraint\",\"text\":\"用户只有每周日晚上能处理自己的项目。\",\"importance\":\"high\",\"confidence\":\"high\",\"reason\":\"这是长期时间限制，会影响项目规划和任务安排。\",\"evidence\":\"我只有每周日晚上能做自己的项目\",\"scope\":\"global\"},{\"decision\":\"save\",\"kind\":\"constraint\",\"text\":\"用户房间的书桌宽度为85厘米，摆放设备时必须考虑该尺寸。\",\"importance\":\"high\",\"confidence\":\"high\",\"reason\":\"书桌尺寸是长期空间约束，会影响设备摆放建议。\",\"evidence\":\"我的房间书桌宽度只有八十五厘米，摆放设备不能忽略这个尺寸\",\"scope\":\"global\"}]",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:dcea3378-99ad-4a74-b6ac-a2db3a516ded\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "你的姓名是柳澄。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:6fc43e55-48e9-41d7-ab7d-9b9be717a172\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "你一直使用 **Inkscape** 绘图。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:da152a79-5da0-47c2-b3f8-e1fe80f00e84\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "你学习单簧管。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:ec91a969-8e04-48cb-a62f-d9a0fd44388b\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "每周日晚上。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:b6c188e0-af5c-4484-8040-fabd983a16a9\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "你的书桌宽度是85厘米。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm",
+      "text": "[{\"decision\":\"save\",\"kind\":\"fact\",\"text\":\"用户的常住城市是洛阳。\",\"importance\":\"medium\",\"confidence\":\"high\",\"reason\":\"常住地会影响未来回答中的本地化建议与生活安排。\",\"evidence\":\"我在洛阳定居\",\"scope\":\"global\"},{\"decision\":\"save\",\"kind\":\"fact\",\"text\":\"用户的职业是图书编辑。\",\"importance\":\"medium\",\"confidence\":\"high\",\"reason\":\"职业信息有助于未来回答贴合用户的工作背景与专业需求。\",\"evidence\":\"目前是图书编辑\",\"scope\":\"global\"}]",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:0bbf2101-c4b7-402a-ab3e-39ed1c326680\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "你的目前工作是图书编辑。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm",
+      "text": "[{\"decision\":\"update\",\"targetId\":\"0bbf2101-c4b7-402a-ab3e-39ed1c326680\",\"kind\":\"fact\",\"text\":\"用户目前的职业是技术写作者。\",\"importance\":\"high\",\"confidence\":\"high\",\"reason\":\"职业已发生变化，更新后可避免继续按旧职业回答。\",\"evidence\":\"我已经完成转岗，现在是一名技术写作者\",\"scope\":\"global\"}]",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:0bbf2101-c4b7-402a-ab3e-39ed1c326680\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "你当前的职业是技术写作者。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:9457fe6a-a167-4d3e-ac70-ed15160981b2\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "洛阳。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm",
+      "text": "[]",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:0bbf2101-c4b7-402a-ab3e-39ed1c326680\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "你目前从事的工作是技术写作者。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "没有记录。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm",
+      "text": "[{\"decision\":\"save\",\"kind\":\"fact\",\"text\":\"用户养了一只名叫松糕的柯基。\",\"importance\":\"medium\",\"confidence\":\"high\",\"reason\":\"宠物信息可用于后续涉及用户生活或宠物话题的连续交流。\",\"evidence\":\"我养了一只叫松糕的柯基。\",\"scope\":\"global\"},{\"decision\":\"save\",\"kind\":\"project\",\"text\":\"用户参加蓝鸟陶艺社，每周五有活动。\",\"importance\":\"medium\",\"confidence\":\"high\",\"reason\":\"持续的社团活动信息有助于未来安排和话题延续。\",\"evidence\":\"我参加蓝鸟陶艺社，每周五活动\",\"scope\":\"global\"},{\"decision\":\"save\",\"kind\":\"fact\",\"text\":\"用户长期住在台州。\",\"importance\":\"high\",\"confidence\":\"high\",\"reason\":\"常住地会影响地点、生活安排和本地化建议。\",\"evidence\":\"长期住在台州\",\"scope\":\"global\"}]",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:6cc4dfaf-41b0-4e2b-b41b-cd7ec3e929d5\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "松糕。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:a75a21c9-48f2-41ac-bd58-eb29acaa9ea5\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "你参加的陶艺社叫“蓝鸟陶艺社”。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-forget",
+      "text": "{\"ids\":[\"6cc4dfaf-41b0-4e2b-b41b-cd7ec3e929d5\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "没有记录。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:a75a21c9-48f2-41ac-bd58-eb29acaa9ea5\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "蓝鸟陶艺社。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-recall",
+      "text": "{\"ids\":[\"item:09fcacdb-c0fb-4c48-9e49-e5b9211d24a0\"]}",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "台州。",
+      "finish": "stop"
+    }
+  ],
+  "dataset": "heldout",
+  "filter": null,
+  "datasetHash": "781d9bc0c70b653dc09aad472c98630c2e85f4b04e0fc368d4c9171f4f7663e9",
+  "sourceHashes": {
+    "auto.js": "9584aabb6d45d9291dc791629f55f0143a0c45b4ad48a61a00a0d958656abee1",
+    "client/index.js": "79a8cfbfab05fb9717fa66f41f486c3822d7464a56de4727450e143151b7ac05",
+    "core.js": "f97f0825d06f31d5c86328cd94906eafc08fc9b70a5884a6e0828fddf0a30795",
+    "embed-worker.mjs": "f25eeeebab4e49073dc813b918fbeac6c05e78d1b90c5a8662aa201c95232d44",
+    "forget-topic.js": "795eeef2bf5f6b2af7831471e58b1b174f360f2f2db0abc638013ab829cc63f1",
+    "index.js": "5ac4c3e3d0b54e67ba8434486957ee7e70762d1bccaea1ff52e6024d4af1a1ec",
+    "memory-context.js": "703c3bfcb6f34d1ae807752afe9c256bac3b30972026c56763454da786042f7c",
+    "memory-edit.js": "a94904b84541e2140e75addc4a779b4305e1347a3e558c5909b4c90f41b1ddda",
+    "memory-live-adapter.js": "73da39aede144b82cdf5969ac402070e4d543551878c88c6a6ee38a62452f41c",
+    "memory-summary.js": "8523cabd0881659d668cc56ab9b1eec12666552328e7032194afe0e8e30cd5c7",
+    "memory-ui-host.js": "5fa3530649a557cfbb5e7735e9c76fc2d55a024258f98666e5d5252dd73da9ce",
+    "memory-ui-routes.js": "43058ef0fcfbe9931b349b0668c67e731ae03191b8ade6f8cb40363789accf57",
+    "memory-ui-service.js": "32eb5961a1d04d9009e512ebaf49c2f13e8d68517f42bf41c86f2d36ef07385c",
+    "recall-filter.js": "e7b433df871eabb01258cb699c795e66d2dccd0ac759bca477e626147f53ac62",
+    "retrieval.js": "3e1de612f1b07679a952bb35dda09d5dadd81704ee6e23dd3c013d23fb61084b",
+    "semantic.js": "32a71bc2c104818885a45e2872596eabe5d790cf155fad8915efa8494d9818e2",
+    "store/core.js": "f3414a2d109cf35956ced713434d31068e38d186d47b6ec7da3b79e6eb83784e",
+    "store/db.js": "a84bec3cbc708fbd14a36db3b8979ce3d03ed50fc0d5b2edc4cb32c59cf8ee5a",
+    "store/extraction.js": "1959abb6d2adc9b4df6f99cd722ed1b16dd02c7dac95e37f289512b8d445a455",
+    "store/factory.js": "1a11855d4a0c8f661d0f348d55db5e92217efc9383719bbc1880262201bddc82",
+    "store/jobs.js": "86ef0020a589fdcd559297d01cc03a42bbd86742f7f87958594228151251795e",
+    "store/memory-jobs.js": "a04e814ca4580261e9094e523f5e30bc1e682eddcf423c9f15caf664c5d308fb",
+    "store/migrate.js": "81b2f104a126e675c240ac4bcff3a5dada7887762e3ab751632ffa1eb2ceb383",
+    "store/request.js": "ac78e6641520a21a114455849e578bb70f3d6dda96801283f7ea1e18ef1d465a",
+    "store/schema.js": "ff5230ac55d856608e4a0ee508cedc1d3323e08d959ccc758f7d8ccbfaaa3cd0",
+    "store/scope.js": "7daad5bc383ac5628d9d15c67ca9d9db79c7e663e72f6092ffa4b65e732d09b9",
+    "store/service.js": "0b84dc9b8cd6aba095843b45e1b6c34b6ee044fa49a04873a2c3b0831cbc04dc"
+  },
+  "provider": "deepseek-account",
+  "model": "deepseek-flash"
+}

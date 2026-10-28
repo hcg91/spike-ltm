@@ -1,0 +1,435 @@
+{
+  "startedAt": "2026-10-26T10:47:02.947Z",
+  "cases": [
+    {
+      "id": "identity",
+      "checks": [
+        {
+          "question": "我的名字是什么？",
+          "answer": "你的名字是程汐。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"0\" count=\"2\">\n- (id:fab5b6bb-2b20-46a0-b90a-ee437535ef3d, fact) 用户叫程汐。\n- (id:49364b57-e3b8-483f-9a07-d5d9f292125b, fact) 用户是文物修复师。\n</ltm-memory>",
+          "passed": true,
+          "ms": 4467.1571
+        },
+        {
+          "question": "我常住哪个城市？",
+          "answer": "绍兴。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"0\" count=\"2\">\n- (id:4916ad50-c622-45fb-adda-32874d7f151b, fact) 用户长期住在绍兴。\n- (id:fab5b6bb-2b20-46a0-b90a-ee437535ef3d, fact) 用户叫程汐。\n</ltm-memory>",
+          "passed": true,
+          "ms": 1024.8050999999996
+        },
+        {
+          "question": "我的职业是什么？",
+          "answer": "你的职业是文物修复师。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"0\" count=\"2\">\n- (id:49364b57-e3b8-483f-9a07-d5d9f292125b, fact) 用户是文物修复师。\n- (id:fab5b6bb-2b20-46a0-b90a-ee437535ef3d, fact) 用户叫程汐。\n</ltm-memory>",
+          "passed": true,
+          "ms": 817.3023999999987
+        },
+        {
+          "question": "我正在学哪门外语？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": true,
+          "ms": 956.0256999999983
+        },
+        {
+          "question": "我最喜欢喝什么饮料？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": true,
+          "ms": 1038.7039000000004
+        }
+      ],
+      "completed": true
+    },
+    {
+      "id": "camera-correction",
+      "checks": [
+        {
+          "question": "我的主力相机是什么？",
+          "answer": "你的主力相机是佳能 R8。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"0\" count=\"1\">\n- (id:230e5f82-1f7b-4309-9db7-55af08fc39c2, fact) 用户的主力相机是佳能 R8。\n</ltm-memory>",
+          "passed": true,
+          "ms": 713.6807000000008
+        },
+        {
+          "question": "我现在主要用哪台相机？",
+          "answer": "尼康 Z6III。",
+          "recalled": "<ltm-memory rev=\"4\" epoch=\"1\" count=\"1\">\n- (id:230e5f82-1f7b-4309-9db7-55af08fc39c2, fact) 用户已卖掉佳能 R8，主力相机更换为尼康 Z6III。\n</ltm-memory>",
+          "passed": true,
+          "ms": 927.6334000000024
+        },
+        {
+          "question": "我喜欢哪种拍照光线？",
+          "answer": "你喜欢阴天柔光。",
+          "recalled": "<ltm-memory rev=\"4\" epoch=\"1\" count=\"2\">\n- (id:d8ba04d6-9088-4285-9009-10906dcf0cd3, preference) 用户拍照时喜欢阴天柔光。\n- (id:810ada38-0106-4a71-9578-db1b0c7bce0c, preference) 用户不喜欢照片过度磨皮。\n</ltm-memory>",
+          "passed": true,
+          "ms": 1265.142200000002
+        },
+        {
+          "question": "我对磨皮有什么偏好？",
+          "answer": "你不喜欢照片过度磨皮。",
+          "recalled": "<ltm-memory rev=\"4\" epoch=\"1\" count=\"1\">\n- (id:810ada38-0106-4a71-9578-db1b0c7bce0c, preference) 用户不喜欢照片过度磨皮。\n</ltm-memory>",
+          "passed": true,
+          "ms": 1246.0980000000018
+        },
+        {
+          "question": "我现在使用的相机型号是什么？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": true,
+          "ms": 1030.6020000000026
+        }
+      ],
+      "completed": true
+    },
+    {
+      "id": "recurring-event",
+      "checks": [
+        {
+          "question": "我的读书会叫什么？",
+          "answer": "海棠读书会。",
+          "recalled": "<ltm-memory rev=\"1\" epoch=\"0\" count=\"1\">\n- (id:a3edcc63-e0f8-4012-963e-ca9d094e03de, project) 用户是海棠读书会的组织者，该读书会固定每月第二个周六在青石书屋聚会。\n</ltm-memory>",
+          "passed": true,
+          "ms": 1031.9098999999987
+        },
+        {
+          "question": "读书会固定在哪里？",
+          "answer": "青石书屋。",
+          "recalled": "<ltm-memory rev=\"1\" epoch=\"0\" count=\"1\">\n- (id:a3edcc63-e0f8-4012-963e-ca9d094e03de, project) 用户是海棠读书会的组织者，该读书会固定每月第二个周六在青石书屋聚会。\n</ltm-memory>",
+          "passed": true,
+          "ms": 1101.597099999999
+        },
+        {
+          "question": "读书会现在每月什么时候聚会？",
+          "answer": "每月第四个周日下午。",
+          "recalled": "<ltm-memory rev=\"2\" epoch=\"1\" count=\"1\">\n- (id:a3edcc63-e0f8-4012-963e-ca9d094e03de, project) 用户是海棠读书会的组织者，该读书会固定改为每月第四个周日下午在云杉书店聚会。\n</ltm-memory>",
+          "passed": true,
+          "ms": 960.6354999999967
+        },
+        {
+          "question": "读书会现在在哪个地方？",
+          "answer": "云杉书店。",
+          "recalled": "<ltm-memory rev=\"2\" epoch=\"1\" count=\"1\">\n- (id:a3edcc63-e0f8-4012-963e-ca9d094e03de, project) 用户是海棠读书会的组织者，该读书会固定改为每月第四个周日下午在云杉书店聚会。\n</ltm-memory>",
+          "passed": true,
+          "ms": 998.2742999999973
+        },
+        {
+          "question": "读书会的暗号是什么？",
+          "answer": "没有记录。",
+          "recalled": "<ltm-memory rev=\"2\" epoch=\"1\" count=\"1\">\n- (id:a3edcc63-e0f8-4012-963e-ca9d094e03de, project) 用户是海棠读书会的组织者，该读书会固定改为每月第四个周日下午在云杉书店聚会。\n</ltm-memory>",
+          "passed": false,
+          "ms": 924.0557000000044
+        }
+      ],
+      "completed": true
+    },
+    {
+      "id": "temporary-vs-preference",
+      "checks": [
+        {
+          "question": "给我推荐饮料时要避开什么？",
+          "answer": "推荐饮料时要避开含咖啡因的饮料。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"0\" count=\"1\">\n- (id:dd643e64-44bc-40bb-bdc3-283789c5e40d, preference) 用户长期避免含咖啡因的饮料。\n</ltm-memory>",
+          "passed": true,
+          "ms": 807.6604000000007
+        },
+        {
+          "question": "我日常做饭一般是几个人吃？",
+          "answer": "两个人吃。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"0\" count=\"2\">\n- (id:487b80c3-7c7e-40a3-ac8b-956263d3d044, fact) 用户做饭通常是两个人吃。\n- (id:54bf2c08-a541-4d9e-9395-ced2f7e7afb9, preference) 用户喜欢清淡的菜。\n</ltm-memory>",
+          "passed": true,
+          "ms": 922.4257999999973
+        },
+        {
+          "question": "我平时的菜肴口味偏好是什么？",
+          "answer": "你喜欢清淡的菜。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"0\" count=\"2\">\n- (id:54bf2c08-a541-4d9e-9395-ced2f7e7afb9, preference) 用户喜欢清淡的菜。\n- (id:487b80c3-7c7e-40a3-ac8b-956263d3d044, fact) 用户做饭通常是两个人吃。\n</ltm-memory>",
+          "passed": true,
+          "ms": 1071.5028999999995
+        },
+        {
+          "question": "我长期喜欢什么口味？",
+          "answer": "你长期喜欢清淡口味。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"0\" count=\"3\">\n- (id:54bf2c08-a541-4d9e-9395-ced2f7e7afb9, preference) 用户喜欢清淡的菜。\n- (id:dd643e64-44bc-40bb-bdc3-283789c5e40d, preference) 用户长期避免含咖啡因的饮料。\n- (id:487b80c3-7c7e-40a3-ac8b-956263d3d044, fact) 用户做饭通常是两个人吃。\n</ltm-memory>",
+          "passed": true,
+          "ms": 1005.9221000000034
+        },
+        {
+          "question": "我有什么食物过敏？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": true,
+          "ms": 775.4616999999998
+        }
+      ],
+      "completed": true
+    },
+    {
+      "id": "project-boundaries",
+      "checks": [
+        {
+          "question": "当前项目约定的服务端端口是多少？",
+          "answer": "当前项目（青禾）约定的服务端端口是 **7813**。",
+          "recalled": "<ltm-memory rev=\"6\" epoch=\"0\" count=\"3\">\n- (id:b103201f-acb1-425c-8203-05784251498a, constraint) 用户的青禾项目服务端端口固定为 7813。\n- (id:fd23b782-c612-4748-9b81-e8ad08ae19ea, project) 用户的当前项目名为青禾。\n- (id:7bc73c8d-9a9b-444f-9d4e-5623aacb73e0, constraint) 用户的青禾项目数据文件使用 SQLite。\n</ltm-memory>",
+          "passed": true,
+          "ms": 766.2632000000012
+        },
+        {
+          "question": "当前项目用什么数据库？",
+          "answer": "SQLite。",
+          "recalled": "<ltm-memory rev=\"6\" epoch=\"0\" count=\"2\">\n- (id:7bc73c8d-9a9b-444f-9d4e-5623aacb73e0, constraint) 用户的青禾项目数据文件使用 SQLite。\n- (id:fd23b782-c612-4748-9b81-e8ad08ae19ea, project) 用户的当前项目名为青禾。\n</ltm-memory>",
+          "passed": true,
+          "ms": 1094.9138999999996
+        },
+        {
+          "question": "当前项目约定的服务端端口是多少？",
+          "answer": "当前项目「赤岩」约定的服务端端口是 **9462**。",
+          "recalled": "<ltm-memory rev=\"6\" epoch=\"0\" count=\"3\">\n- (id:0856c2c3-b21c-482d-b7e6-d55de1e5ac0f, constraint) 用户当前项目「赤岩」的服务端端口固定为 9462。\n- (id:c612d843-c404-4a8b-b7a8-843a8d4eecef, project) 用户当前项目名为「赤岩」。\n- (id:0ba81802-5297-4c1a-a14a-2b3092304c51, constraint) 用户当前项目「赤岩」的数据存储使用 PostgreSQL。\n</ltm-memory>",
+          "passed": true,
+          "ms": 945.8467000000092
+        },
+        {
+          "question": "当前项目用什么数据库？",
+          "answer": "PostgreSQL。",
+          "recalled": "<ltm-memory rev=\"6\" epoch=\"0\" count=\"3\">\n- (id:0ba81802-5297-4c1a-a14a-2b3092304c51, constraint) 用户当前项目「赤岩」的数据存储使用 PostgreSQL。\n- (id:c612d843-c404-4a8b-b7a8-843a8d4eecef, project) 用户当前项目名为「赤岩」。\n- (id:0856c2c3-b21c-482d-b7e6-d55de1e5ac0f, constraint) 用户当前项目「赤岩」的服务端端口固定为 9462。\n</ltm-memory>",
+          "passed": true,
+          "ms": 666.8248000000021
+        },
+        {
+          "question": "青禾项目的服务端端口是多少？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": true,
+          "ms": 998.5445000000036
+        },
+        {
+          "question": "青禾项目的服务端端口是多少？",
+          "answer": "没有记录。",
+          "recalled": "<ltm-memory rev=\"6\" epoch=\"0\" count=\"3\">\n- (id:0856c2c3-b21c-482d-b7e6-d55de1e5ac0f, constraint) 用户当前项目「赤岩」的服务端端口固定为 9462。\n- (id:c612d843-c404-4a8b-b7a8-843a8d4eecef, project) 用户当前项目名为「赤岩」。\n- (id:0ba81802-5297-4c1a-a14a-2b3092304c51, constraint) 用户当前项目「赤岩」的数据存储使用 PostgreSQL。\n</ltm-memory>",
+          "passed": true,
+          "ms": 1129.8929999999964
+        }
+      ],
+      "completed": true
+    },
+    {
+      "id": "hypothetical",
+      "checks": [
+        {
+          "question": "我目前住在哪里？",
+          "answer": "泉州。",
+          "recalled": "<ltm-memory rev=\"2\" epoch=\"0\" count=\"2\">\n- (id:b301f88e-bd50-4f27-80f9-9382e150017a, fact) 用户目前住在泉州。\n- (id:79a86948-ca02-4f2a-a6cf-95c7d109f73f, fact) 用户是陶瓷设计师。\n</ltm-memory>",
+          "passed": true,
+          "ms": 1557.802199999991
+        },
+        {
+          "question": "我做什么工作？",
+          "answer": "你是陶瓷设计师。",
+          "recalled": "<ltm-memory rev=\"2\" epoch=\"0\" count=\"1\">\n- (id:79a86948-ca02-4f2a-a6cf-95c7d109f73f, fact) 用户是陶瓷设计师。\n</ltm-memory>",
+          "passed": true,
+          "ms": 1098.0363999999972
+        },
+        {
+          "question": "我报名的潜水学校叫什么？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": true,
+          "ms": 806.1800999999978
+        },
+        {
+          "question": "我的朋友经历能证明我会潜水吗？",
+          "answer": "没有记录，无法证明。",
+          "recalled": "<ltm-memory rev=\"2\" epoch=\"0\" count=\"1\">\n- (id:b301f88e-bd50-4f27-80f9-9382e150017a, fact) 用户目前住在泉州。\n</ltm-memory>",
+          "passed": true,
+          "ms": 874.7069999999949
+        },
+        {
+          "question": "我已经购买了什么潜水装备？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": true,
+          "ms": 984.0268999999971
+        }
+      ],
+      "completed": true
+    },
+    {
+      "id": "coexisting-devices",
+      "checks": [
+        {
+          "question": "我用于工作的电脑是什么？",
+          "answer": "你用于工作的电脑是 **ThinkPad P16**。",
+          "recalled": "<ltm-memory rev=\"2\" epoch=\"0\" count=\"2\">\n- (id:e0a39f70-13b2-4fb9-a11f-6a37266ea283, fact) 用户长期用于轻便出行的电脑是 MacBook Air M3。\n- (id:44e28585-935c-43d2-a740-4eea7f4308ea, fact) 用户长期使用的工作主机是 ThinkPad P16。\n</ltm-memory>",
+          "passed": true,
+          "ms": 990.5495999999985
+        },
+        {
+          "question": "我出门常带哪台电脑？",
+          "answer": "你出门常带 **MacBook Air M3**。",
+          "recalled": "<ltm-memory rev=\"2\" epoch=\"0\" count=\"2\">\n- (id:e0a39f70-13b2-4fb9-a11f-6a37266ea283, fact) 用户长期用于轻便出行的电脑是 MacBook Air M3。\n- (id:44e28585-935c-43d2-a740-4eea7f4308ea, fact) 用户长期使用的工作主机是 ThinkPad P16。\n</ltm-memory>",
+          "passed": true,
+          "ms": 952.2396000000008
+        },
+        {
+          "question": "我的工作电脑现在是什么？",
+          "answer": "你的工作电脑现在是 **ThinkPad P1 Gen 7**。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"1\" count=\"2\">\n- (id:e0a39f70-13b2-4fb9-a11f-6a37266ea283, fact) 用户长期用于轻便出行的电脑是 MacBook Air M3。\n- (id:44e28585-935c-43d2-a740-4eea7f4308ea, fact) 用户长期使用的工作主机已从 ThinkPad P16 更换为 ThinkPad P1 Gen 7。\n</ltm-memory>",
+          "passed": true,
+          "ms": 937.0075999999972
+        },
+        {
+          "question": "我出门用的电脑现在是什么？",
+          "answer": "你出门用的电脑是 **MacBook Air M3**。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"1\" count=\"2\">\n- (id:e0a39f70-13b2-4fb9-a11f-6a37266ea283, fact) 用户长期用于轻便出行的电脑是 MacBook Air M3。\n- (id:44e28585-935c-43d2-a740-4eea7f4308ea, fact) 用户长期使用的工作主机已从 ThinkPad P16 更换为 ThinkPad P1 Gen 7。\n</ltm-memory>",
+          "passed": true,
+          "ms": 954.2575999999972
+        },
+        {
+          "question": "我的华硕电脑是什么型号？",
+          "answer": "没有记录。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"1\" count=\"2\">\n- (id:e0a39f70-13b2-4fb9-a11f-6a37266ea283, fact) 用户长期用于轻便出行的电脑是 MacBook Air M3。\n- (id:44e28585-935c-43d2-a740-4eea7f4308ea, fact) 用户长期使用的工作主机已从 ThinkPad P16 更换为 ThinkPad P1 Gen 7。\n</ltm-memory>",
+          "passed": true,
+          "ms": 1111.1563000000024
+        }
+      ],
+      "completed": true
+    },
+    {
+      "id": "long-message",
+      "checks": [
+        {
+          "question": "我叫什么？",
+          "answer": "你叫沈翎。",
+          "recalled": "<ltm-memory rev=\"10\" epoch=\"0\" count=\"4\">\n- (id:54ab7ad8-d8af-47a3-acf3-f3ab2b10d035, fact) 用户叫沈翎。\n- (id:6ae5b36d-d02b-48fb-b005-67c3df667f1c, fact) 用户从事工业设计。\n- (id:6d81caf1-36ec-4e29-8620-96de8174c3f8, fact) 用户常住湖州。\n- (id:32361d31-6cf9-4c78-bf03-1b14c73a1e07, fact) 用户的桌面操作系统是 Fedora。\n</ltm-memory>",
+          "passed": true,
+          "ms": 1637.765499999994
+        },
+        {
+          "question": "我的绘图软件是什么？",
+          "answer": "Krita",
+          "recalled": "<ltm-memory rev=\"10\" epoch=\"0\" count=\"2\">\n- (id:932acd4c-d4f1-492a-82fc-76acef30dd81, preference) 用户长期使用 Krita 作为绘图工具。\n- (id:32361d31-6cf9-4c78-bf03-1b14c73a1e07, fact) 用户的桌面操作系统是 Fedora。\n</ltm-memory>",
+          "passed": true,
+          "ms": 867.9465999999957
+        },
+        {
+          "question": "我练的乐器是什么？",
+          "answer": "你练的是中提琴。",
+          "recalled": "<ltm-memory rev=\"10\" epoch=\"0\" count=\"1\">\n- (id:c94c6325-7696-4b23-ae74-91330ece43ef, fact) 用户练习中提琴，每周三晚上上课。\n</ltm-memory>",
+          "passed": true,
+          "ms": 974.4837000000116
+        },
+        {
+          "question": "我每周什么时候有时间做个人项目？",
+          "answer": "你每周只有周六上午有时间做个人项目。",
+          "recalled": "<ltm-memory rev=\"10\" epoch=\"0\" count=\"4\">\n- (id:e6ef5e94-1785-4aaa-b1a4-3c866b5e03d0, constraint) 用户每周只有周六上午能投入个人项目。\n- (id:c94c6325-7696-4b23-ae74-91330ece43ef, fact) 用户练习中提琴，每周三晚上上课。\n- (id:e07974e8-0fae-440f-bbf2-f45c0e12a567, rule) 用户要求助手不要将其临时行程当作固定时间安排。\n- (id:6ae5b36d-d02b-48fb-b005-67c3df667f1c, fact) 用户从事工业设计。\n</ltm-memory>",
+          "passed": true,
+          "ms": 926.0046000000002
+        },
+        {
+          "question": "我家的工作桌有多宽？",
+          "answer": "你家的工作桌宽度是90厘米。",
+          "recalled": "<ltm-memory rev=\"10\" epoch=\"0\" count=\"2\">\n- (id:0d95d7cb-2798-4de9-83ec-ba1a23ff1519, constraint) 用户家的工作桌宽度为90厘米，推荐设备时需要考虑此尺寸限制。\n- (id:32361d31-6cf9-4c78-bf03-1b14c73a1e07, fact) 用户的桌面操作系统是 Fedora。\n</ltm-memory>",
+          "passed": true,
+          "ms": 803.1633999999904
+        }
+      ],
+      "completed": true
+    },
+    {
+      "id": "job-updates",
+      "checks": [
+        {
+          "question": "我现在的职业是什么？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": false,
+          "ms": 1116.7158000000054
+        },
+        {
+          "question": "我目前做什么工作？",
+          "answer": "你目前是交互设计师。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"1\" count=\"1\">\n- (id:4e065059-35b9-4d14-b778-ed76c71a1944, fact) 用户已离开展陈设计岗位，现正式转为交互设计师。\n</ltm-memory>",
+          "passed": true,
+          "ms": 1039.3369999999995
+        },
+        {
+          "question": "我现在常住哪个城市？",
+          "answer": "您现在常住佛山。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"1\" count=\"1\">\n- (id:425293cd-fe3b-4fee-952c-d9392fdd3f14, fact) 用户常住佛山。\n</ltm-memory>",
+          "passed": true,
+          "ms": 849.1285000000062
+        },
+        {
+          "question": "我现在已经担任什么岗位？",
+          "answer": "你现在担任交互设计师。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"1\" count=\"1\">\n- (id:4e065059-35b9-4d14-b778-ed76c71a1944, fact) 用户已离开展陈设计岗位，现正式转为交互设计师。\n</ltm-memory>",
+          "passed": true,
+          "ms": 1002.8139999999985
+        },
+        {
+          "question": "我的工资具体是多少？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": true,
+          "ms": 1199.005999999994
+        }
+      ],
+      "completed": true
+    },
+    {
+      "id": "forget-multiple",
+      "checks": [
+        {
+          "question": "我的猫叫什么？",
+          "answer": "你的猫叫栗子。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"0\" count=\"1\">\n- (id:025b1009-c9bc-480d-a0ba-da7514c4b415, fact) 用户养了一只名叫栗子的橘猫。\n</ltm-memory>",
+          "passed": true,
+          "ms": 1718.2770000000019
+        },
+        {
+          "question": "我的合唱团叫什么？",
+          "answer": "你的合唱团叫“铜铃”。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"0\" count=\"1\">\n- (id:e9f21782-7585-4e92-af4d-27998c93f838, project) 用户参加名为铜铃的合唱团，每周二排练。\n</ltm-memory>",
+          "passed": true,
+          "ms": 985.3062000000209
+        },
+        {
+          "question": "我养的猫叫什么？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": true,
+          "ms": 1102.7412999999942
+        },
+        {
+          "question": "我参加的合唱团叫什么？",
+          "answer": "铜铃。",
+          "recalled": "<ltm-memory rev=\"4\" epoch=\"1\" count=\"1\">\n- (id:e9f21782-7585-4e92-af4d-27998c93f838, project) 用户参加名为铜铃的合唱团，每周二排练。\n</ltm-memory>",
+          "passed": true,
+          "ms": 1206.8893000000098
+        },
+        {
+          "question": "我住在哪个城市？",
+          "answer": "镇江。",
+          "recalled": "<ltm-memory rev=\"4\" epoch=\"1\" count=\"1\">\n- (id:fcfb7862-0ec8-43a5-bfb2-cd319c1ae2b7, fact) 用户的常住城市是镇江。\n</ltm-memory>",
+          "passed": true,
+          "ms": 1119.959200000012
+        }
+      ],
+      "completed": true
+    }
+  ],
+  "total": 51,
+  "passed": 49,
+  "failed": 2,
+  "errors": 0,
+  "completed": true,
+  "expectedTotal": 51,
+  "unanswered": 0,
+  "endedAt": "2026-10-26T10:49:21.119Z",
+  "calls": 68,
+  "dataset": "development",
+  "datasetHash": "4cd358d2afbe18a607efce54335d68f2e5771187a4d8a6bd25c1a63c94d7c748",
+  "provider": "deepseek-account",
+  "model": "deepseek-flash"
+}

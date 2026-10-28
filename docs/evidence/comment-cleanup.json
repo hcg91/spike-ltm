@@ -1,0 +1,114 @@
+[
+  {
+    "file": "auto.js",
+    "commentsEdited": 4,
+    "charactersRemoved": 382,
+    "astUnchanged": true,
+    "sha256": "9584aabb6d45d9291dc791629f55f0143a0c45b4ad48a61a00a0d958656abee1"
+  },
+  {
+    "file": "core.js",
+    "commentsEdited": 8,
+    "charactersRemoved": 665,
+    "astUnchanged": true,
+    "sha256": "f97f0825d06f31d5c86328cd94906eafc08fc9b70a5884a6e0828fddf0a30795"
+  },
+  {
+    "file": "embed-worker.mjs",
+    "commentsEdited": 1,
+    "charactersRemoved": 263,
+    "astUnchanged": true,
+    "sha256": "f25eeeebab4e49073dc813b918fbeac6c05e78d1b90c5a8662aa201c95232d44"
+  },
+  {
+    "file": "index.js",
+    "commentsEdited": 10,
+    "charactersRemoved": 617,
+    "astUnchanged": true,
+    "sha256": "5ac4c3e3d0b54e67ba8434486957ee7e70762d1bccaea1ff52e6024d4af1a1ec"
+  },
+  {
+    "file": "memory-edit.js",
+    "commentsEdited": 1,
+    "charactersRemoved": 124,
+    "astUnchanged": true,
+    "sha256": "a94904b84541e2140e75addc4a779b4305e1347a3e558c5909b4c90f41b1ddda"
+  },
+  {
+    "file": "memory-ui-host.js",
+    "commentsEdited": 1,
+    "charactersRemoved": 110,
+    "astUnchanged": true,
+    "sha256": "5fa3530649a557cfbb5e7735e9c76fc2d55a024258f98666e5d5252dd73da9ce"
+  },
+  {
+    "file": "memory-ui-routes.js",
+    "commentsEdited": 1,
+    "charactersRemoved": 163,
+    "astUnchanged": true,
+    "sha256": "43058ef0fcfbe9931b349b0668c67e731ae03191b8ade6f8cb40363789accf57"
+  },
+  {
+    "file": "memory-ui-service.js",
+    "commentsEdited": 1,
+    "charactersRemoved": 197,
+    "astUnchanged": true,
+    "sha256": "32eb5961a1d04d9009e512ebaf49c2f13e8d68517f42bf41c86f2d36ef07385c"
+  },
+  {
+    "file": "semantic.js",
+    "commentsEdited": 2,
+    "charactersRemoved": 251,
+    "astUnchanged": true,
+    "sha256": "32a71bc2c104818885a45e2872596eabe5d790cf155fad8915efa8494d9818e2"
+  },
+  {
+    "file": "store/core.js",
+    "commentsEdited": 3,
+    "charactersRemoved": 241,
+    "astUnchanged": true,
+    "sha256": "f3414a2d109cf35956ced713434d31068e38d186d47b6ec7da3b79e6eb83784e"
+  },
+  {
+    "file": "store/db.js",
+    "commentsEdited": 1,
+    "charactersRemoved": 164,
+    "astUnchanged": true,
+    "sha256": "a84bec3cbc708fbd14a36db3b8979ce3d03ed50fc0d5b2edc4cb32c59cf8ee5a"
+  },
+  {
+    "file": "store/migrate.js",
+    "commentsEdited": 1,
+    "charactersRemoved": 291,
+    "astUnchanged": true,
+    "sha256": "81b2f104a126e675c240ac4bcff3a5dada7887762e3ab751632ffa1eb2ceb383"
+  },
+  {
+    "file": "store/request.js",
+    "commentsEdited": 1,
+    "charactersRemoved": 80,
+    "astUnchanged": true,
+    "sha256": "ac78e6641520a21a114455849e578bb70f3d6dda96801283f7ea1e18ef1d465a"
+  },
+  {
+    "file": "store/schema.js",
+    "commentsEdited": 1,
+    "charactersRemoved": 150,
+    "astUnchanged": true,
+    "sha256": "ff5230ac55d856608e4a0ee508cedc1d3323e08d959ccc758f7d8ccbfaaa3cd0"
+  },
+  {
+    "file": "store/scope.js",
+    "commentsEdited": 1,
+    "charactersRemoved": 154,
+    "astUnchanged": true,
+    "sha256": "7daad5bc383ac5628d9d15c67ca9d9db79c7e663e72f6092ffa4b65e732d09b9"
+  },
+  {
+    "file": "store/service.js",
+    "commentsEdited": 3,
+    "charactersRemoved": 222,
+    "astUnchanged": true,
+    "sha256": "0b84dc9b8cd6aba095843b45e1b6c34b6ee044fa49a04873a2c3b0831cbc04dc"
+  }
+]

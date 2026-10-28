@@ -1,0 +1,355 @@
+{
+  "startedAt": "2026-10-26T10:50:35.000Z",
+  "cases": [
+    {
+      "id": "recurring-event",
+      "checks": [
+        {
+          "question": "我的读书会叫什么？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": false,
+          "ms": 798.1533999999992
+        },
+        {
+          "question": "读书会固定在哪里？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": false,
+          "ms": 630.2217
+        },
+        {
+          "question": "读书会现在每月什么时候聚会？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": false,
+          "ms": 1073.2468000000008
+        },
+        {
+          "question": "读书会现在在哪个地方？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": false,
+          "ms": 913.8508000000002
+        },
+        {
+          "question": "读书会的暗号是什么？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": false,
+          "ms": 1061.1420999999991
+        }
+      ],
+      "writes": [
+        {
+          "operation": "ingest",
+          "diagnostics": {
+            "global": [],
+            "projects": {},
+            "jobs": {
+              "counts": {
+                "completed": 1
+              },
+              "lastError": null
+            }
+          }
+        },
+        {
+          "operation": "ingest",
+          "diagnostics": {
+            "global": [],
+            "projects": {},
+            "jobs": {
+              "counts": {
+                "completed": 2
+              },
+              "lastError": null
+            }
+          }
+        }
+      ],
+      "completed": true
+    },
+    {
+      "id": "job-updates",
+      "checks": [
+        {
+          "question": "我现在的职业是什么？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": false,
+          "ms": 1418.7368999999999
+        },
+        {
+          "question": "我目前做什么工作？",
+          "answer": "你目前正式从事**交互设计师**工作。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"1\" count=\"1\">\n- (id:d7d01656-94fd-4cfb-b7d5-ca467a90ff0a, fact) 用户已离开展陈设计岗位，目前正式转为交互设计师。\n</ltm-memory>",
+          "passed": true,
+          "ms": 937.2775999999976
+        },
+        {
+          "question": "我现在常住哪个城市？",
+          "answer": "佛山。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"1\" count=\"1\">\n- (id:06831b43-3f9b-4401-ae1d-a6db74eefaf2, fact) 用户常住佛山。\n</ltm-memory>",
+          "passed": true,
+          "ms": 1251.3616000000002
+        },
+        {
+          "question": "我现在已经担任什么岗位？",
+          "answer": "你现在正式担任**交互设计师**。",
+          "recalled": "<ltm-memory rev=\"3\" epoch=\"1\" count=\"1\">\n- (id:d7d01656-94fd-4cfb-b7d5-ca467a90ff0a, fact) 用户已离开展陈设计岗位，目前正式转为交互设计师。\n</ltm-memory>",
+          "passed": true,
+          "ms": 962.5836999999992
+        },
+        {
+          "question": "我的工资具体是多少？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": true,
+          "ms": 1132.539200000003
+        }
+      ],
+      "writes": [
+        {
+          "operation": "ingest",
+          "diagnostics": {
+            "global": [
+              {
+                "id": "d7d01656-94fd-4cfb-b7d5-ca467a90ff0a",
+                "text": "用户目前在博物馆担任展陈设计师。",
+                "kind": "fact",
+                "scopeId": "cd1e02cd-2b18-4fbd-bfdd-f9e6e81b9a4a",
+                "scope": "global",
+                "source": "auto",
+                "importance": "high",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 1,
+                "protected": false,
+                "reason": "职业信息会影响未来回答中对用户专业背景和工作场景的理解。",
+                "createdAt": "2026-10-26T10:50:52.998Z",
+                "updatedAt": "2026-10-26T10:50:52.998Z"
+              },
+              {
+                "id": "06831b43-3f9b-4401-ae1d-a6db74eefaf2",
+                "text": "用户常住佛山。",
+                "kind": "fact",
+                "scopeId": "cd1e02cd-2b18-4fbd-bfdd-f9e6e81b9a4a",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 2,
+                "protected": false,
+                "reason": "常住地可用于未来回答中的本地化建议和连续性判断。",
+                "createdAt": "2026-10-26T10:50:52.998Z",
+                "updatedAt": "2026-10-26T10:50:52.998Z"
+              }
+            ],
+            "projects": {},
+            "jobs": {
+              "counts": {
+                "completed": 1
+              },
+              "lastError": null
+            }
+          }
+        },
+        {
+          "operation": "ingest",
+          "diagnostics": {
+            "global": [
+              {
+                "id": "d7d01656-94fd-4cfb-b7d5-ca467a90ff0a",
+                "text": "用户已离开展陈设计岗位，目前正式转为交互设计师。",
+                "kind": "fact",
+                "scopeId": "cd1e02cd-2b18-4fbd-bfdd-f9e6e81b9a4a",
+                "scope": "global",
+                "source": "auto",
+                "importance": "high",
+                "confidence": "high",
+                "status": "active",
+                "version": 2,
+                "revision": 3,
+                "protected": false,
+                "reason": "职业信息会影响未来回答中对用户专业背景和工作场景的理解。",
+                "createdAt": "2026-10-26T10:50:52.998Z",
+                "updatedAt": "2026-10-26T10:50:59.772Z"
+              },
+              {
+                "id": "06831b43-3f9b-4401-ae1d-a6db74eefaf2",
+                "text": "用户常住佛山。",
+                "kind": "fact",
+                "scopeId": "cd1e02cd-2b18-4fbd-bfdd-f9e6e81b9a4a",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 2,
+                "protected": false,
+                "reason": "常住地可用于未来回答中的本地化建议和连续性判断。",
+                "createdAt": "2026-10-26T10:50:52.998Z",
+                "updatedAt": "2026-10-26T10:50:52.998Z"
+              }
+            ],
+            "projects": {},
+            "jobs": {
+              "counts": {
+                "completed": 2
+              },
+              "lastError": null
+            }
+          }
+        },
+        {
+          "operation": "ingest",
+          "diagnostics": {
+            "global": [
+              {
+                "id": "d7d01656-94fd-4cfb-b7d5-ca467a90ff0a",
+                "text": "用户已离开展陈设计岗位，目前正式转为交互设计师。",
+                "kind": "fact",
+                "scopeId": "cd1e02cd-2b18-4fbd-bfdd-f9e6e81b9a4a",
+                "scope": "global",
+                "source": "auto",
+                "importance": "high",
+                "confidence": "high",
+                "status": "active",
+                "version": 2,
+                "revision": 3,
+                "protected": false,
+                "reason": "职业信息会影响未来回答中对用户专业背景和工作场景的理解。",
+                "createdAt": "2026-10-26T10:50:52.998Z",
+                "updatedAt": "2026-10-26T10:50:59.772Z"
+              },
+              {
+                "id": "06831b43-3f9b-4401-ae1d-a6db74eefaf2",
+                "text": "用户常住佛山。",
+                "kind": "fact",
+                "scopeId": "cd1e02cd-2b18-4fbd-bfdd-f9e6e81b9a4a",
+                "scope": "global",
+                "source": "auto",
+                "importance": "medium",
+                "confidence": "high",
+                "status": "active",
+                "version": 1,
+                "revision": 2,
+                "protected": false,
+                "reason": "常住地可用于未来回答中的本地化建议和连续性判断。",
+                "createdAt": "2026-10-26T10:50:52.998Z",
+                "updatedAt": "2026-10-26T10:50:52.998Z"
+              }
+            ],
+            "projects": {},
+            "jobs": {
+              "counts": {
+                "completed": 3
+              },
+              "lastError": null
+            }
+          }
+        }
+      ],
+      "completed": true
+    }
+  ],
+  "total": 10,
+  "passed": 4,
+  "failed": 6,
+  "errors": 0,
+  "completed": true,
+  "expectedTotal": 10,
+  "unanswered": 0,
+  "endedAt": "2026-10-26T10:51:05.985Z",
+  "calls": 15,
+  "modelOutputs": [
+    {
+      "purpose": "spike-ltm",
+      "text": "[{\"decision\":\"save\",\"kind\":\"project\",\"text\":\"用户组织海棠读书会，该活动固定在每月第二个周六于青石书屋聚会。\",\"importance\":\"high\",\"confidence\":\"high\",\"reason\":\"这是用户长期参与的活动安排，未来涉及日程、地点或活动背景时有用。\",\"evidence\":\"我组织海棠读书会，固定每月第二个周六在青石书屋聚会。\",\"scope\":\"project\"}]",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "没有记录。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "没有记录。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm",
+      "text": "[{\"decision\":\"save\",\"kind\":\"project\",\"text\":\"用户的海棠读书会以后固定为每月第四个周日下午，地点在云杉书店，暗号照旧。\",\"importance\":\"medium\",\"confidence\":\"high\",\"reason\":\"这是持续活动的固定时间与地点，未来涉及安排时有用。\",\"evidence\":\"海棠读书会以后固定改为每月第四个周日下午，地点搬到云杉书店，暗号照旧。\",\"scope\":\"project\"}]",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "没有记录。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "没有记录。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "没有记录。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm",
+      "text": "[\n  {\n    \"decision\": \"save\",\n    \"kind\": \"fact\",\n    \"text\": \"用户目前在博物馆担任展陈设计师。\",\n    \"importance\": \"high\",\n    \"confidence\": \"high\",\n    \"reason\": \"职业信息会影响未来回答中对用户专业背景和工作场景的理解。\",\n    \"evidence\": \"我目前在博物馆做展陈设计师\",\n    \"scope\": \"global\"\n  },\n  {\n    \"decision\": \"save\",\n    \"kind\": \"fact\",\n    \"text\": \"用户常住佛山。\",\n    \"importance\": \"medium\",\n    \"confidence\": \"high\",\n    \"reason\": \"常住地可用于未来回答中的本地化建议和连续性判断。\",\n    \"evidence\": \"常住佛山\",\n    \"scope\": \"global\"\n  }\n]",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "没有记录。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm",
+      "text": "[{\"decision\":\"update\",\"targetId\":\"d7d01656-94fd-4cfb-b7d5-ca467a90ff0a\",\"kind\":\"fact\",\"text\":\"用户已离开展陈设计岗位，目前正式转为交互设计师。\",\"importance\":\"high\",\"confidence\":\"high\",\"reason\":\"职业状态已发生明确变化，影响后续回答中对用户身份的判断。\",\"evidence\":\"我已经离开展陈设计岗位，现在正式转为交互设计师\",\"scope\":\"global\"}]",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "你目前正式从事**交互设计师**工作。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "佛山。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm",
+      "text": "[]",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "你现在正式担任**交互设计师**。",
+      "finish": "stop"
+    },
+    {
+      "purpose": "spike-ltm-evaluation",
+      "text": "没有记录。",
+      "finish": "stop"
+    }
+  ],
+  "dataset": "development",
+  "filter": [
+    "recurring-event",
+    "job-updates"
+  ],
+  "datasetHash": "4cd358d2afbe18a607efce54335d68f2e5771187a4d8a6bd25c1a63c94d7c748",
+  "provider": "deepseek-account",
+  "model": "deepseek-flash"
+}

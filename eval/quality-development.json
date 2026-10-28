@@ -1,0 +1,559 @@
+[
+  {
+    "id": "identity",
+    "steps": [
+      {
+        "op": "ingest",
+        "text": "我叫程汐，长期住在绍兴，是文物修复师。朋友吕牧住济南，是小学教师，正在学西班牙语。今天我替他拿了一杯拿铁，但我没有告诉你我的饮料口味。",
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我的名字是什么？",
+        "expected": [
+          "程汐"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我常住哪个城市？",
+        "expected": [
+          "绍兴"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我的职业是什么？",
+        "expected": [
+          "文物修复"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我正在学哪门外语？",
+        "expected": [
+          "没有记录"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我最喜欢喝什么饮料？",
+        "expected": [
+          "没有记录"
+        ],
+        "project": null
+      }
+    ]
+  },
+  {
+    "id": "camera-correction",
+    "steps": [
+      {
+        "op": "ingest",
+        "text": "我自己的主力相机是佳能 R8，平时拍照喜欢阴天柔光，不喜欢过度磨皮。",
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我的主力相机是什么？",
+        "expected": [
+          "R8"
+        ],
+        "project": null
+      },
+      {
+        "op": "ingest",
+        "text": "佳能 R8 我已经卖掉了。现在自己的主力相机换成尼康 Z6III，拍照风格和修图偏好都没变。",
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我现在主要用哪台相机？",
+        "expected": [
+          "Z6III"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我喜欢哪种拍照光线？",
+        "expected": [
+          "柔光"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我对磨皮有什么偏好？",
+        "expected": [
+          "不喜欢",
+          "不要",
+          "不过度"
+        ],
+        "project": null
+      },
+      {
+        "op": "forget",
+        "text": "相机"
+      },
+      {
+        "op": "ask",
+        "text": "我现在使用的相机型号是什么？",
+        "expected": [
+          "没有记录"
+        ],
+        "project": null
+      }
+    ]
+  },
+  {
+    "id": "recurring-event",
+    "steps": [
+      {
+        "op": "ingest",
+        "text": "我组织海棠读书会，固定每月第二个周六在青石书屋聚会。活动暗号是灰鲸浮出海面。",
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我的读书会叫什么？",
+        "expected": [
+          "海棠"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "读书会固定在哪里？",
+        "expected": [
+          "青石"
+        ],
+        "project": null
+      },
+      {
+        "op": "ingest",
+        "text": "海棠读书会以后固定改为每月第四个周日下午，地点搬到云杉书店，暗号照旧。今天临时在地铁站等人不是活动地点。",
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "读书会现在每月什么时候聚会？",
+        "expected": [
+          "第四个周日",
+          "第四个星期日"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "读书会现在在哪个地方？",
+        "expected": [
+          "云杉"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "读书会的暗号是什么？",
+        "expected": [
+          "灰鲸浮出海面"
+        ],
+        "project": null
+      }
+    ]
+  },
+  {
+    "id": "temporary-vs-preference",
+    "steps": [
+      {
+        "op": "ingest",
+        "text": "我长期避免含咖啡因的饮料，做饭通常是两个人吃，喜欢清淡的菜。今晚多做一份是朋友来访，我买的美式是替同事买的。",
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "给我推荐饮料时要避开什么？",
+        "expected": [
+          "咖啡因"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我日常做饭一般是几个人吃？",
+        "expected": [
+          "两",
+          "2",
+          "二"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我平时的菜肴口味偏好是什么？",
+        "expected": [
+          "清淡"
+        ],
+        "project": null
+      },
+      {
+        "op": "ingest",
+        "text": "今晚点的麻辣火锅是迁就客人的口味，我自己的长期口味没有改变。",
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我长期喜欢什么口味？",
+        "expected": [
+          "清淡"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我有什么食物过敏？",
+        "expected": [
+          "没有记录"
+        ],
+        "project": null
+      }
+    ]
+  },
+  {
+    "id": "project-boundaries",
+    "steps": [
+      {
+        "op": "ingest",
+        "text": "当前项目叫青禾，服务端端口固定为 7813，数据文件用 SQLite。请只作为当前项目约定。",
+        "project": "alpha"
+      },
+      {
+        "op": "ingest",
+        "text": "当前项目叫赤岩，服务端端口固定为 9462，数据文件用 PostgreSQL。请只作为当前项目约定。",
+        "project": "beta"
+      },
+      {
+        "op": "ask",
+        "text": "当前项目约定的服务端端口是多少？",
+        "expected": [
+          "7813"
+        ],
+        "project": "alpha"
+      },
+      {
+        "op": "ask",
+        "text": "当前项目用什么数据库？",
+        "expected": [
+          "SQLite"
+        ],
+        "project": "alpha"
+      },
+      {
+        "op": "ask",
+        "text": "当前项目约定的服务端端口是多少？",
+        "expected": [
+          "9462"
+        ],
+        "project": "beta"
+      },
+      {
+        "op": "ask",
+        "text": "当前项目用什么数据库？",
+        "expected": [
+          "PostgreSQL"
+        ],
+        "project": "beta"
+      },
+      {
+        "op": "ask",
+        "text": "青禾项目的服务端端口是多少？",
+        "expected": [
+          "没有记录"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "青禾项目的服务端端口是多少？",
+        "expected": [
+          "没有记录"
+        ],
+        "project": "beta"
+      }
+    ]
+  },
+  {
+    "id": "hypothetical",
+    "steps": [
+      {
+        "op": "ingest",
+        "text": "我目前住在泉州，是陶瓷设计师。假如以后搬到厦门，我可能去学潜水，这只是设想，还没有搬家，也没有报班。朋友梁杉已经在厦门学潜水了，那不是我的经历。",
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我目前住在哪里？",
+        "expected": [
+          "泉州"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我做什么工作？",
+        "expected": [
+          "陶瓷设计"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我报名的潜水学校叫什么？",
+        "expected": [
+          "没有记录"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我的朋友经历能证明我会潜水吗？",
+        "expected": [
+          "没有记录"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我已经购买了什么潜水装备？",
+        "expected": [
+          "没有记录"
+        ],
+        "project": null
+      }
+    ]
+  },
+  {
+    "id": "coexisting-devices",
+    "steps": [
+      {
+        "op": "ingest",
+        "text": "我长期有两台电脑：工作主机是 ThinkPad P16，轻便出行用 MacBook Air M3。我姐姐的电脑是华硕灵耀，不是我的。",
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我用于工作的电脑是什么？",
+        "expected": [
+          "P16"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我出门常带哪台电脑？",
+        "expected": [
+          "M3"
+        ],
+        "project": null
+      },
+      {
+        "op": "ingest",
+        "text": "工作用的 ThinkPad P16 换成了 P1 Gen 7。轻便出行仍用原来的 MacBook Air M3。",
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我的工作电脑现在是什么？",
+        "expected": [
+          "P1"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我出门用的电脑现在是什么？",
+        "expected": [
+          "M3"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我的华硕电脑是什么型号？",
+        "expected": [
+          "没有记录"
+        ],
+        "project": null
+      }
+    ]
+  },
+  {
+    "id": "long-message",
+    "steps": [
+      {
+        "op": "ingest",
+        "text": "我叫沈翎，常住湖州，从事工业设计。我长期使用的绘图工具是 Krita，桌面系统是 Fedora，练习乐器是中提琴，每周三晚上上课。我的自行车是蓝色捷安特 Escape 2。今天我出门看到便利店贴了促销海报，旁边的路口正在修路，等车时有人讨论旅行，有人聊球赛。我只是随口记录这段经历，不需要保存路上的细节。在与这些闲聊无关的长期安排上，我每周只有周六上午能做个人项目，计划做一套无障碍公交导视。请别把临时行程当作固定时间。还有一个重要限制：我家工作桌宽度只有九十厘米，推荐设备时需要考虑尺寸。",
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我叫什么？",
+        "expected": [
+          "沈翎"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我的绘图软件是什么？",
+        "expected": [
+          "Krita"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我练的乐器是什么？",
+        "expected": [
+          "中提琴"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我每周什么时候有时间做个人项目？",
+        "expected": [
+          "周六上午"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我家的工作桌有多宽？",
+        "expected": [
+          "九十",
+          "90"
+        ],
+        "project": null
+      }
+    ]
+  },
+  {
+    "id": "job-updates",
+    "steps": [
+      {
+        "op": "ingest",
+        "text": "我目前在博物馆做展陈设计师，常住佛山。",
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我现在的职业是什么？",
+        "expected": [
+          "展陈设计"
+        ],
+        "project": null
+      },
+      {
+        "op": "ingest",
+        "text": "我已经离开展陈设计岗位，现在正式转为交互设计师，仍然住在佛山。",
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我目前做什么工作？",
+        "expected": [
+          "交互设计"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我现在常住哪个城市？",
+        "expected": [
+          "佛山"
+        ],
+        "project": null
+      },
+      {
+        "op": "ingest",
+        "text": "朋友说以后可能介绍我去做产品经理，但我还没有接受，也没有转岗。",
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我现在已经担任什么岗位？",
+        "expected": [
+          "交互设计"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我的工资具体是多少？",
+        "expected": [
+          "没有记录"
+        ],
+        "project": null
+      }
+    ]
+  },
+  {
+    "id": "forget-multiple",
+    "steps": [
+      {
+        "op": "ingest",
+        "text": "我养了一只叫栗子的橘猫。我参加一个叫铜铃的合唱团，每周二排练。我的常住城市是镇江。",
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我的猫叫什么？",
+        "expected": [
+          "栗子"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我的合唱团叫什么？",
+        "expected": [
+          "铜铃"
+        ],
+        "project": null
+      },
+      {
+        "op": "forget",
+        "text": "猫"
+      },
+      {
+        "op": "ask",
+        "text": "我养的猫叫什么？",
+        "expected": [
+          "没有记录"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我参加的合唱团叫什么？",
+        "expected": [
+          "铜铃"
+        ],
+        "project": null
+      },
+      {
+        "op": "ask",
+        "text": "我住在哪个城市？",
+        "expected": [
+          "镇江"
+        ],
+        "project": null
+      }
+    ]
+  }
+]

@@ -1,0 +1,71 @@
+{
+  "startedAt": "2026-10-26T07:22:49.797Z",
+  "cases": [
+    {
+      "id": "synthetic-identity-correction-forgetting",
+      "checks": [
+        {
+          "question": "我叫什么名字？",
+          "answer": "你叫谭禾。",
+          "recalled": "<ltm-memory rev=\"6\" epoch=\"0\" count=\"2\">\n- (id:f3cd314f-ddcd-4657-a026-a8dadedb50a9, fact) 用户叫谭禾。\n- (id:53ab9dfc-5cec-48c7-9fb1-8dcbb00fa13c, fact) 用户的职业是文物数字化工程师。\n</ltm-memory>",
+          "passed": true,
+          "ms": 1444.9481999999998
+        },
+        {
+          "question": "我长期生活在哪座城市？",
+          "answer": "嘉兴。",
+          "recalled": "<ltm-memory rev=\"6\" epoch=\"0\" count=\"1\">\n- (id:36c77e97-350c-4181-abb6-c99df68af296, fact) 用户长期定居嘉兴。\n</ltm-memory>",
+          "passed": true,
+          "ms": 879.4885999999997
+        },
+        {
+          "question": "我的职业是什么？",
+          "answer": "你的职业是文物数字化工程师。",
+          "recalled": "<ltm-memory rev=\"6\" epoch=\"0\" count=\"2\">\n- (id:53ab9dfc-5cec-48c7-9fb1-8dcbb00fa13c, fact) 用户的职业是文物数字化工程师。\n- (id:f3cd314f-ddcd-4657-a026-a8dadedb50a9, fact) 用户叫谭禾。\n</ltm-memory>",
+          "passed": true,
+          "ms": 646.5197000000007
+        },
+        {
+          "question": "我的主力相机是什么型号？",
+          "answer": "你的主力相机型号是富士 X-T50。",
+          "recalled": "<ltm-memory rev=\"6\" epoch=\"0\" count=\"1\">\n- (id:c4681fdf-76a6-4ddc-bbb8-66d1e7bfaa24, fact) 用户的主力相机是富士 X-T50。\n</ltm-memory>",
+          "passed": true,
+          "ms": 882.825499999999
+        },
+        {
+          "question": "我目前在准备哪门语言考试？",
+          "answer": "没有记录。",
+          "recalled": "<ltm-memory rev=\"6\" epoch=\"0\" count=\"1\">\n- (id:53ab9dfc-5cec-48c7-9fb1-8dcbb00fa13c, fact) 用户的职业是文物数字化工程师。\n</ltm-memory>",
+          "passed": true,
+          "ms": 1368.2577
+        },
+        {
+          "question": "我现在主要使用哪台相机？",
+          "answer": "你现在主要使用的是**尼康 Zf**。",
+          "recalled": "<ltm-memory rev=\"7\" epoch=\"1\" count=\"1\">\n- (id:c4681fdf-76a6-4ddc-bbb8-66d1e7bfaa24, fact) 用户已卖掉原来的富士 X-T50，现在长期使用的主力相机是尼康 Zf。\n</ltm-memory>",
+          "passed": true,
+          "ms": 1118.2834000000003
+        },
+        {
+          "question": "我现在的相机型号是什么？",
+          "answer": "没有记录。",
+          "recalled": "",
+          "passed": true,
+          "ms": 1018.4018999999989
+        }
+      ],
+      "completed": true
+    }
+  ],
+  "total": 7,
+  "passed": 7,
+  "failed": 0,
+  "errors": 0,
+  "completed": true,
+  "expectedTotal": 7,
+  "unanswered": 0,
+  "endedAt": "2026-10-26T07:23:05.698Z",
+  "calls": 9,
+  "provider": "deepseek-account",
+  "model": "deepseek-flash"
+}
