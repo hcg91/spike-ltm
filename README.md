@@ -1,24 +1,29 @@
 # spike-ltm
 
-给 DeepSeek Harness 加上本地长期记忆。聊天时保存有用的事实和偏好，回答前找回相关内容。点头像菜单里的“长期记忆”可以查看摘要，直接对话修改全部内容，也可以选中一段再改。
+**Local long-term memory for DeepSeek Harness** · DeepSeek Harness 的本地长期记忆插件
 
-普通聊天的记忆更新在后台完成，不弹确认。记忆页面里的修改建议，点击“更新”后才保存。
+[English](#english) · [中文](#中文)
 
-**当前版本：0.2.0-rc.2，发布候选版。** 适合单人本地使用，仍需要更多真实使用反馈。测试结果见[验收记录](docs/VALIDATION.md)，不以测试数量代替效果排名。
+---
 
-## 能做什么
+## English
 
-- 区分全局记忆和当前项目，不按相同文件夹名称合并项目。
-- 支持修改、版本历史和遗忘。写入成功才返回保存回执；过期修改不能覆盖新内容。
-- 新安装使用 SQLite，后台任务可在重启后继续。已有 JSON 保持原存储，不会自动迁移。
-- 向量检索在本机运行；当前会话模型复核少量候选，减少漏召回和无关内容。
-- 按主题遗忘能识别不同说法，例如“狗”和“柯基”。模型失败时明确报错，不假装已经删完。
+spike-ltm gives DeepSeek Harness a local memory that survives across conversations. It stores durable facts and preferences in SQLite, extracts new memories in the background, recalls relevant ones before answering, and lets you review or edit everything from the avatar menu.
 
-## 安装
+Current version: **0.2.0-rc.2** (release candidate). Single-user, local-first. Test results are in [docs/VALIDATION.md](docs/VALIDATION.md); they are regression numbers, not a benchmark ranking.
 
-需要 **Node.js 24** 和 DeepSeek Harness。本机验证版本为 Harness 0.2.1-rc.3；其他宿主版本需要重新验证接口。
+### What it does
 
-在插件源码目录运行：
+- **Automatic extraction** — after a turn ends, a durable job asks the host model what is worth remembering; failures never block the chat.
+- **Semantic recall** — a local BGE embedding model runs in a child process; the current session model reviews a small candidate set before injection.
+- **Corrections** — a clearly stated new fact replaces the old one through a version-checked write, keeping history.
+- **Project scope** — memory is bound to the real workspace directory from the session header, never to a folder name.
+- **Reliable forgetting** — deleting removes the entry, versions, sources, vectors, and dependent summary bullets; queued jobs cannot resurrect it.
+- **In-app editing** — the avatar menu opens a memory summary; you can discuss a change, preview it, and click Update, or edit directly.
+
+### Install
+
+Requires **Node.js 24** and DeepSeek Harness 0.2.1-rc.3 (other host versions need re-validation).
 
 ```sh
 npm ci
@@ -26,26 +31,101 @@ npm run test:all
 npm pack
 ```
 
-通过 Harness 的插件管理功能安装生成的 `spike-ltm-0.2.0-rc.2.tgz`。插件包不含账号、个人记忆或模型权重。不要用 CLI 绕过桌面程序修改它管理的 profile。
+Install `spike-ltm-0.2.0-rc.2.tgz` through Harness's plugin manager.
 
-插件沿用宿主账号和模型配置，不会把 `deepseek-account` 换成 API 密钥。首次运行需要加载本地向量模型；下载镜像和缓存目录可用 `semanticMirror`、`semanticCacheDir` 设置。
+Market index (add as an index source in Plugins → Discover):
 
-## 使用前了解
+```
+https://raw.githubusercontent.com/hcg91/spike-ltm/main/market/index.json
+```
 
-记忆数据保存在本地，但**提炼、候选复核、主题遗忘和摘要编辑会调用宿主模型**，发送本次所需的发言或记忆。候选复核通常增加一次短调用；实际耗时和调用量在验收记录中列出。
+Or download the release asset directly:
+<https://github.com/hcg91/spike-ltm/releases/tag/v0.2.0-rc.2>
 
-当前只支持一个宿主进程写入同一数据库。单次提炼最多保留 12 条候选；召回和摘要也有长度限制，不能保证一段很长的输入里的所有细节都被记住。网络故障、模型误判和超时仍可能造成漏记或暂时不召回。
+### Privacy
 
-旧 JSON 模式不具备 SQLite 的持久任务能力。需要切换时，按[迁移说明](docs/MIGRATION.md)显式操作；插件不自动导入过去的聊天，也不自动切换线上存储。按主题删除需要模型；直接删除页面中选中的记忆不需要模型。
+Memory stays in a local SQLite database. Extraction and summary editing send the current utterance, or the selected summary section, to the host model you already use. Embeddings run on your machine. No account credentials, telemetry, or model weights are stored or uploaded. SQLite is not encrypted; protect the profile directory with OS permissions. See [SECURITY.md](SECURITY.md).
 
-## 测试和贡献
+### Limitations
+
+- Known synthetic regression sets only; no independent blind evaluation and no peer comparison. Do not read the test counts as accuracy.
+- Not validated on Linux or other Harness versions; the desktop UI has not been clicked through end-to-end in CI.
+- No automatic migration of an existing JSON store; migration is explicit and backed up. See [docs/MIGRATION.md](docs/MIGRATION.md).
+- A single host process may write to one database. Recall and extraction have token and length budgets; very long inputs are not guaranteed to be remembered in full.
+
+### Screenshots
+
+Interface screenshots are captured from an isolated test profile with synthetic data. They are added under `docs/images/` and linked here when available; this repository does not ship fabricated UI mockups.
+
+### Tests and contributing
+
+```sh
+npm test                 # quick regression
+npm run test:all         # storage, jobs, forgetting, host wiring
+npm run test:semantic    # real local embeddings and recall wiring
+```
+
+Tests use synthetic temporary data. See [CONTRIBUTING.md](CONTRIBUTING.md), [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for referenced projects, and [docs/EVALUATION.md](docs/EVALUATION.md) for the evaluation method. MIT licensed.
+
+---
+
+## 中文
+
+spike-ltm 给 DeepSeek Harness 加一份跨对话保存的本地记忆：把值得记的事实和偏好存进 SQLite，在后台提炼，在回答前按语义找回，并且可以在头像菜单里查看和修改。
+
+当前版本：**0.2.0-rc.2**（发布候选）。单人本地使用，测试结果是回归数据，不是准确率排名，见[验收记录](docs/VALIDATION.md)。
+
+### 能做什么
+
+- **自动提炼**：一轮对话结束后，用持久化任务询问宿主模型哪些内容值得记；失败不会打断聊天。
+- **语义召回**：本地 BGE 向量模型跑在子进程里；注入前由当前会话模型复核少量候选。
+- **事实纠正**：明确说出的新事实通过带版本校验的写入替换旧内容，同时保留历史。
+- **项目隔离**：作用域绑定宿主会话里的真实工作目录，不按文件夹名猜项目。
+- **可靠遗忘**：删除条目、历史、来源、向量以及依赖它的摘要；已排队的任务不能把它写回来。
+- **内置编辑**：头像菜单打开记忆摘要，可以对话提出修改、预览后再点更新，也可以直接编辑。
+
+### 安装
+
+需要 **Node.js 24** 和 DeepSeek Harness 0.2.1-rc.3（其他宿主版本需重新验证接口）。
+
+```sh
+npm ci
+npm run test:all
+npm pack
+```
+
+在 Harness 插件管理里安装生成的 `spike-ltm-0.2.0-rc.2.tgz`。
+
+也可以在「插件 → 发现 → 索引源」添加本仓库的市场索引：
+
+```
+https://raw.githubusercontent.com/hcg91/spike-ltm/main/market/index.json
+```
+
+或直接下载 Release 资产：
+<https://github.com/hcg91/spike-ltm/releases/tag/v0.2.0-rc.2>
+
+### 隐私
+
+记忆保存在本地 SQLite 中。提炼和摘要编辑会把当前发言或选中的摘要段落发送给你正在使用的宿主模型；向量在本机计算。不保存账号凭据，不做遥测，也不分发模型权重。SQLite 没有加密，请用系统账户和磁盘权限保护 profile 目录。详见 [SECURITY.md](SECURITY.md)。
+
+### 已知限制
+
+- 只有已知合成回归集，未做独立盲测，也没有和同类项目同场对比，不能把测试数量当成准确率。
+- 未验证 Linux 和其他 Harness 版本；桌面界面没有在 CI 里逐项点击验证。
+- 不自动迁移旧的 JSON 存储；迁移需要显式执行并保留备份，见[迁移说明](docs/MIGRATION.md)。
+- 同一数据库只允许一个宿主进程写入。召回和提炼都有 token 与长度预算，很长的输入不保证全部记住。
+
+### 界面截图
+
+界面截图来自使用合成数据的隔离测试 profile，放到 `docs/images/` 后会在本节展示；仓库不会放置伪造的界面示意图。
+
+### 测试与贡献
 
 ```sh
 npm test                 # 快速回归
-npm run test:all         # 存储、并发、遗忘、宿主接线等回归
-npm run test:semantic    # 真实本地向量及召回接线测试
+npm run test:all         # 存储、任务、遗忘、宿主接线
+npm run test:semantic    # 真实本地向量与召回接线
 ```
 
-测试使用合成临时数据。账号模型评测需要另行运行，会消耗账号额度；方法和数据见[评测说明](docs/EVALUATION.md)。没有宿主安装文件时，相关契约测试会明确跳过。
-
-本项目尚未完成与其他开源记忆项目的同场测试，不声称领先。采用 MIT 许可证。贡献方式见 [CONTRIBUTING.md](CONTRIBUTING.md)，数据处理说明见 [SECURITY.md](SECURITY.md)，参考项目见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+测试使用合成临时数据。贡献方式见 [CONTRIBUTING.md](CONTRIBUTING.md)，参考项目见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)，评测方法见[评测说明](docs/EVALUATION.md)。MIT 许可证。
