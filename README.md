@@ -55,7 +55,11 @@ Memory stays in a local SQLite database. Extraction and summary editing send the
 
 ### Screenshots
 
-Interface screenshots are captured from an isolated test profile with synthetic data. They are added under `docs/images/` and linked here when available; this repository does not ship fabricated UI mockups.
+The screenshots below use synthetic demo data in an isolated test profile.
+
+| Entry | Summary | Edit |
+|---|---|---|
+| ![Memory entry in the avatar menu](docs/images/memory-menu.png) | ![Summary dialog](docs/images/memory-dialog.png) | ![Section selected for editing](docs/images/memory-edit.png) |
 
 ### Tests and contributing
 
@@ -118,7 +122,15 @@ https://raw.githubusercontent.com/hcg91/spike-ltm/main/market/index.json
 
 ### 界面截图
 
-界面截图来自使用合成数据的隔离测试 profile，放到 `docs/images/` 后会在本节展示；仓库不会放置伪造的界面示意图。
+下面的截图使用隔离测试 profile 里的合成演示数据。
+
+| 头像菜单入口 | 记忆摘要 | 选中一段修改 |
+|---|---|---|
+| ![头像菜单里的长期记忆入口](docs/images/memory-menu.png) | ![记忆摘要弹窗](docs/images/memory-dialog.png) | ![选中一段后的修改框](docs/images/memory-edit.png) |
+
+更新摘要与删除入口：
+
+![更新摘要与删除全部记忆](docs/images/memory-actions.png)
 
 ### 测试与贡献
 
